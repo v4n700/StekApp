@@ -13,8 +13,9 @@ export default class PromotionsScreen extends Component{
     return (
       <View style={styles.container}>
         <Header style={styles.header}>
-          <Left>
+          <Left style={styles.left}>
             <Icon name="menu" style={styles.menuButton} onPress={() => this.props.navigation.openDrawer()}/>
+            <Text style={styles.stek}>СТЭК</Text>
           </Left>
         </Header>
         <Text>Акции</Text>
@@ -34,5 +35,15 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: 'orange',
+  },
+  left: {
+    flexDirection: 'row',
+  },
+  stek: {
+    fontSize: 22,
+    color: 'white',
+    marginLeft: 32,
+    marginTop: 2,
+    fontWeight: 'bold',
   }
 });
