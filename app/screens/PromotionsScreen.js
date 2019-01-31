@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
   },
   stek: {
     fontSize: 22,
+    fontFamily: 'Roboto',
     color: 'white',
     marginLeft: 32,
-    marginTop: 2,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   icon: {
     height: 34,

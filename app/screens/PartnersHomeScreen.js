@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 import {Header, Left, Right, Icon, Body, Title} from 'native-base';
+import PartnersCategoriesListComponent from '../components/PartnersCategoriesListComponent';
 
-import RoundCategoryComponent from '../components/RoundCategoryComponent';
 
 export default class PartnersScreen extends Component{
   static navigationOptions = {
@@ -20,63 +20,9 @@ export default class PartnersScreen extends Component{
             <Text style={styles.stek}>СТЭК</Text>
           </Left>
           <Right>
-
           </Right>
         </Header>
-
-        <View style={styles.column}>
-          <View style={styles.categoriesView}>
-            <View style={styles.column}>
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Food/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Кафе, доставка еды'
-              />
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Sport/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Спорт, здоровье, красота'
-              />
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/CarService/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Авто-сервис'
-              />
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Clothing/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Одежда, обувь, аксессуары'
-              />
-            </View>
-            <View style={styles.column}>
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Entertainment/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Развлечения'
-              />
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Typography/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Цветы, подарки, полиграфия'
-              />
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Gadgets/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Техника, гаджеты'
-              />
-              <RoundCategoryComponent 
-                imagePath={require('../assets/general_icon/Education/drawable-hdpi/Canvas.png')}
-                style={styles.category}
-                categoryName='Образование'
-              />
-            </View>
-          </View>
-          <RoundCategoryComponent 
-            imagePath={require('../assets/general_icon/Others/drawable-hdpi/Canvas.png')}
-            style={styles.categoryOthers}
-            categoryName='Разное'
-          />
-        </View>
+        <PartnersCategoriesListComponent/>
       </View>
     )
   }
@@ -85,7 +31,7 @@ export default class PartnersScreen extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   menuButton: {
     marginLeft: 16,
@@ -109,12 +55,19 @@ const styles = StyleSheet.create({
     width: 34
   },
   categoriesView: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  column: {
+  leftColumn: {
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    flex: 1
+  },
+  rightColumn: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    flex: 1
   },
   category: {
     width: 90,
@@ -123,5 +76,15 @@ const styles = StyleSheet.create({
   categoryOthers: {
     width: 74,
     height: 74
+  },
+  space: {
+    width: '100%',
+    height: '3%'
+  },
+  othersView: {
+    alignItems: 'center'
+  },
+  scroll: {
+    flex: 1,
   }
 });

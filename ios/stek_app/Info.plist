@@ -73,6 +73,13 @@
 		<string>rubicon-icon-font.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Phenomena-Black.ttf</string>
+		<string>Phenomena-Bold.ttf</string>
+		<string>Phenomena-ExtraBold.ttf</string>
+		<string>Phenomena-ExtraLight.ttf</string>
+		<string>Phenomena-Light.ttf</string>
+		<string>Phenomena-Regular.ttf</string>
+		<string>Phenomena-Thin.ttf</string>
 	</array>
 </dict>
 </plist>

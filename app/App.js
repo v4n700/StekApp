@@ -29,7 +29,8 @@ const AppDrawerNavigator = createDrawerNavigator({
 }, {
   contentComponent: CustomDrawerComponent,
   contentOptions: {
-    activeTintColor: 'orange'
+    activeTintColor: 'orange',
+    labelStyle:{fontFamily:'Phenomena'}
   }
 })
 

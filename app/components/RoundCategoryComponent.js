@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import {createDrawerNavigator, createAppContainer, DrawerItems} from 'react-navigation';
+import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+
 
 export default class RoundCategoryComponent extends Component{
 
@@ -18,7 +19,7 @@ export default class RoundCategoryComponent extends Component{
           <View style={styles.shadow}>
             <Image source={(this.props.imagePath)} style={[styles.roundImageView, this.props.style]}/>
           </View>
-          <Text multiline = {true} style={styles.categoryName}>{this.props.categoryName}</Text>
+          <Text multiline={true} style={styles.categoryName}>{this.props.categoryName}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -29,13 +30,8 @@ const styles = StyleSheet.create({
   container: {
     height: 120,
     width: 120,
-    marginTop: 19,
-    marginLeft: 40,
-    marginRight: 40,
-    marginBottom: 10,
   },
   roundImageView: {
-
   },
   shadow: {
     shadowColor: 'gray',
