@@ -5,6 +5,8 @@ import SplashScreen from 'react-native-splash-screen';
 
 import PartnersScreen from './screens/PartnersHomeScreen';
 import PromotionsScreen from './screens/PromotionsScreen';
+import AboutUsScreen from './screens/AboutUsScreen';
+import FAQScreen from './screens/FAQScreen';
 import CustomDrawerComponent from './components/CustomDrawerComponent';
 
 
@@ -21,7 +23,9 @@ export default class App extends Component{
 
 const AppDrawerNavigator = createDrawerNavigator({
   PartnersScreen: PartnersScreen,
-  PromoScreen: PromotionsScreen
+  AboutUsScreen: AboutUsScreen,
+  PromoScreen: PromotionsScreen,
+  FAQScreen: FAQScreen
 }, {
   contentComponent: CustomDrawerComponent,
   contentOptions: {

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import {Header, Left, Right, Icon} from 'native-base';
 
 export default class PromotionsScreen extends Component{
   static navigationOptions = {
     drawerLabel: 'Акции',
     drawerIcon: () => (
-      <Icon name="logo-usd" style={{color: "red"}}/>
+      <Image source={require('../assets/menu/menu/Promotions/drawable-hdpi/Group14.png')} style={styles.icon}/>
     )
   }
   render(){
@@ -45,5 +45,9 @@ const styles = StyleSheet.create({
     marginLeft: 32,
     marginTop: 2,
     fontWeight: 'bold',
+  },
+  icon: {
+    height: 34,
+    width: 34
   }
 });
