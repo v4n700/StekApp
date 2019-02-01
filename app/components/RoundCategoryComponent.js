@@ -8,9 +8,10 @@ export default class RoundCategoryComponent extends Component{
   }
 
   render() {
+    const { navigation } = this.props
     return(
       <View style={styles.container}>
-        <TouchableOpacity style={styles.opacity}>
+        <TouchableOpacity style={styles.opacity} onPress={()=> navigation.navigate('PartnersListScreen')}>
           <View style={styles.shadow}>
             <Image source={(this.props.imagePath)} style={[styles.roundImageView, this.props.style]}/>
           </View>

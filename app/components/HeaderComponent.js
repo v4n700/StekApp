@@ -5,10 +5,11 @@ import {Header, Left, Right, Icon, Body, Title} from 'native-base';
 
 export default class HeaderComponent extends Component {
   render() {
+    const { navigation } = this.props;
     return(
       <Header style={styles.header}>
         <Left style={styles.left}>
-          <Icon name="menu" style={styles.menuButton} onPress={() => this.props.navigation.openDrawer()}/>
+          <Icon name="menu" style={styles.menuButton} onPress={() => navigation.openDrawer()}/>
           <Text style={styles.stek}>СТЭК</Text>
         </Left>
         <Right>
@@ -31,9 +32,9 @@ const styles = StyleSheet.create({
   },
   stek: {
     fontSize: 22,
+    fontFamily: 'Roboto',
     color: 'white',
     marginLeft: 32,
-    marginTop: 2,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
 });

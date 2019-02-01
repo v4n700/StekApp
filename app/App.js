@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView} from 'react-native';
-import {createDrawerNavigator, createAppContainer, DrawerItems, StackNavigator} from 'react-navigation';
+import {Platform, StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
+import {createDrawerNavigator, createAppContainer, DrawerItems, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 
 import PartnersScreen from './screens/PartnersHomeScreen';
@@ -9,6 +9,7 @@ import AboutUsScreen from './screens/AboutUsScreen';
 import FAQScreen from './screens/FAQScreen';
 import NewsScreen from './screens/NewsScreen';
 import MapScreen from './screens/MapScreen';
+import PartnersListScreen from './screens/PartnersListScreen';
 
 import CustomDrawerComponent from './components/CustomDrawerComponent';
 
@@ -25,8 +26,26 @@ export default class App extends Component{
   }
 }
 
+const StackNavigator = createStackNavigator(
+  {
+    PartnersScreen: PartnersScreen,
+    PartnersListScreen: PartnersListScreen
+  },
+  {
+    headerMode: 'none'
+  }
+)
+
 const AppDrawerNavigator = createDrawerNavigator({
-  PartnersScreen: PartnersScreen,
+  PartnersScreen: {
+    screen: StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Партнеры',
+      drawerIcon: () => (
+        <Image source={require('./assets/menu/menu/Partners/drawable-hdpi/Group12.png')} style={styles.icon}/>
+      )
+    }
+  },
   AboutUsScreen: AboutUsScreen,
   PromoScreen: PromotionsScreen,
   NewsScreen: NewsScreen,
@@ -37,11 +56,11 @@ const AppDrawerNavigator = createDrawerNavigator({
   contentOptions: {
     activeTintColor: 'orange',
     labelStyle:{fontFamily:'Phenomena'}
+
   }
 })
 
 const Drawer = createAppContainer(AppDrawerNavigator);
-
 
 const styles = StyleSheet.create({
   container: {
@@ -60,4 +79,8 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  icon: {
+    height: 34,
+    width: 34
+  }
 });
