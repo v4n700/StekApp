@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
-
 
 export default class RoundCategoryComponent extends Component{
 
   constructor(props) {
     super(props);
-
-    this.state = {
-    }
   }
 
   render() {
@@ -25,6 +20,7 @@ export default class RoundCategoryComponent extends Component{
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {

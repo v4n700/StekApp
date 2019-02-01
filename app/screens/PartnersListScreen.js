@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
-import {Header, Left, Right, Icon, Body, Title} from 'native-base';
+import {Platform, StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
+import PartnersListComponent from '../components/PartnersListComponent'
 
-export default class HeaderComponent extends Component {
+export default class PartnersListScreen extends Component {
   render() {
-    return(
+    return (
+    <View style={styles.container}>
       <Header style={styles.header}>
         <Left style={styles.left}>
           <Icon name="menu" style={styles.menuButton} onPress={() => this.props.navigation.openDrawer()}/>
@@ -14,11 +16,17 @@ export default class HeaderComponent extends Component {
         <Right>
         </Right>
       </Header>
+      <PartnersListComponent/>
+    </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF'
+  },
   menuButton: {
     marginLeft: 16,
     color: "white"
@@ -35,5 +43,5 @@ const styles = StyleSheet.create({
     marginLeft: 32,
     marginTop: 2,
     fontWeight: 'bold',
-  },
+  }
 });

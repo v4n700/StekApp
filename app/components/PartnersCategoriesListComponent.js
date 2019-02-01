@@ -4,11 +4,13 @@ import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform} from 'r
 import RoundCategoryComponent from '../components/RoundCategoryComponent';
 
 export default class PartnersCategoriesListComponent extends Component{
+  constructor(props) {
+    super(props);
+  }
+
   render(){
-    let toolbarHeight = (Platform.OS === 'ios' ) ? 64 : 56;
-    let screenHeight = Dimensions.get('window').height;
     return(
-          <ScrollView style={styles.scroll}>
+          <ScrollView style={styles.scroll} alwaysBounceVertical={false}>
             <View style={styles.categoriesView}>
               <View style={styles.leftColumn}>
                 <View style={styles.space}/>
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
     height: '5%'
   },
   othersView: {
-    marginTop: '25%',
+    marginTop: '30%',
     alignItems: 'center'
   },
   scroll: {

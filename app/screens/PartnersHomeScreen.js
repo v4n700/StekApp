@@ -3,7 +3,6 @@ import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 import {Header, Left, Right, Icon, Body, Title} from 'native-base';
 import PartnersCategoriesListComponent from '../components/PartnersCategoriesListComponent';
 
-
 export default class PartnersScreen extends Component{
   static navigationOptions = {
     drawerLabel: 'Партнеры',
@@ -27,6 +26,7 @@ export default class PartnersScreen extends Component{
     )
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
