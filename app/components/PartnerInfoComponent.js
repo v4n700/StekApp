@@ -11,14 +11,14 @@ export default class PartnerInfoComponent extends Component {
 
   render() {
     return (
-      <View style = {styles.container}>
+      <ScrollView style = {styles.container} alwaysBounceVertical={false}>
         <View style={styles.header}>
           <Text style={styles.headerText}> {this.props.categoryName} </Text>
           <Image source={(this.props.imagePath)} style={styles.partnerLogo}/>
         </View>
         <View style={styles.bodyTextRowView}>
           <Icon name="info" size={24} color="#E37926"/>
-          <Text style={styles.bodyText}>{this.props.description}</Text>
+          <Text multiline={true} style={styles.bodyText}>{this.props.description}</Text>
         </View>
         <View style={styles.bodyTextRowView}>
           <Icon name="location-pin" size={24} color="#E37926"/>
@@ -32,7 +32,7 @@ export default class PartnerInfoComponent extends Component {
           <Icon name="link" size={24} color="#E37926"/>
           <Text style={styles.bodyText}>{this.props.link}</Text>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
