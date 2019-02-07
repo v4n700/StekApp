@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import {Header, Left, Right, Icon, Body, Title} from 'native-base';
+import MapView from 'react-native-maps';
 
 import HeaderComponent from '../components/HeaderComponent';
 
@@ -15,7 +15,16 @@ export default class MapScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <Text>Карта</Text>
+        <MapView
+          style={{flex: 1}}
+          region={{
+            latitude: 61.7877502,
+            longitude: 34.3794617,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}
+          showsUserLocation={false}
+        />
       </View>
     )
   }

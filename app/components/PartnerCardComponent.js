@@ -3,11 +3,12 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-n
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
 
-export default class RoundCategoryComponent extends Component{
+export default class PartnerCardComponent extends Component{
   render() {
+    const { navigation } = this.props
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.touch}>
+        <TouchableOpacity style={styles.touch} onPress={()=> navigation.navigate('PartnerInfoScreen')}>
         <Image source={require('../assets/test/coffessor.png')} resizeMode="contain" style={styles.partnerLogo}/>
         <View style={styles.textView}>
           <Text style={styles.upperText}>Скидка 15% </Text>

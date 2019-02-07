@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity} from 'react-native';
 import {createDrawerNavigator, createAppContainer, DrawerItems} from 'react-navigation';
 
 export default class CustomDrawerComponent extends Component{
@@ -7,9 +7,9 @@ export default class CustomDrawerComponent extends Component{
     const {...props} = this.props
     return (
       <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
+        <TouchableOpacity style={styles.header} onPress={()=> this.props.navigation.navigate('BarcodeScreen')}>
           <Image style={styles.logo} source={require('../assets/drawerStekLogo.png')}/>
-        </View>
+        </TouchableOpacity>
         <DrawerItems {...props}/>
       </SafeAreaView>
     );

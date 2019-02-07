@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
-import {Header, Left, Right, Icon, Body, Title} from 'native-base';
 
 import PartnersCategoriesListComponent from '../components/PartnersCategoriesListComponent';
 import HeaderComponent from '../components/HeaderComponent';

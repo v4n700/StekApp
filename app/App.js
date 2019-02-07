@@ -10,6 +10,8 @@ import FAQScreen from './screens/FAQScreen';
 import NewsScreen from './screens/NewsScreen';
 import MapScreen from './screens/MapScreen';
 import PartnersListScreen from './screens/PartnersListScreen';
+import PartnerInfoScreen from './screens/PartnerInfoScreen';
+import BarcodeScreen from './screens/BarcodeScreen';
 
 import CustomDrawerComponent from './components/CustomDrawerComponent';
 
@@ -29,7 +31,9 @@ export default class App extends Component{
 const StackNavigator = createStackNavigator(
   {
     PartnersScreen: PartnersScreen,
-    PartnersListScreen: PartnersListScreen
+    PartnersListScreen: PartnersListScreen,
+    PartnerInfoScreen: PartnerInfoScreen,
+    BarcodeScreen: BarcodeScreen
   },
   {
     headerMode: 'none'
@@ -56,7 +60,6 @@ const AppDrawerNavigator = createDrawerNavigator({
   contentOptions: {
     activeTintColor: 'orange',
     labelStyle:{fontFamily:'Phenomena'}
-
   }
 })
 

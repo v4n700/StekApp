@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import {Header, Left, Right, Icon} from 'native-base';
 
 import HeaderComponent from '../components/HeaderComponent';
 
