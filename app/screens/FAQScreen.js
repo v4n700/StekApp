@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
+import SpoilerComponent from '../components/SpoilerComponent';
 
 export default class FAQScreen extends Component{
   static navigationOptions = {
@@ -14,7 +15,10 @@ export default class FAQScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <Text>Вопросы</Text>
+        <SpoilerComponent
+          spoilerText = 'Секретная база ЦРУ'
+          underSpoiler = 'И в ней сидят: Контр-адмирал бибис и мистер Майский-Жуковский'
+        />
       </View>
     )
   }
