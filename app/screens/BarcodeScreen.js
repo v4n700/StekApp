@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import Barcode from 'react-native-barcode-builder';
 
 
@@ -14,15 +14,9 @@ export default class BarcodeScreen extends Component{
 
 
         <View style={styles.bottom}>
-          <View style={styles.buttonView}>
-            <Button 
-              fontFamily='Roboto'
-              fontWeight='Bold'
-              color='white'
-              title='ГОТОВО'
-              onPress={() => this.props.navigation.goBack()}
-            />
-          </View>
+          <TouchableOpacity style={styles.buttonView}  onPress={() => this.props.navigation.goBack()}>
+            <Text style={styles.buttonText}> ГОТОВО</Text>
+          </TouchableOpacity>
         </View>
       </View>
     )
@@ -32,7 +26,8 @@ export default class BarcodeScreen extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white'
   },
   barcodeView: {
     alignItems: 'center',
@@ -44,6 +39,13 @@ const styles = StyleSheet.create({
     width: '90%',
     height: 40,
     borderRadius: 2,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    color: 'white'
   },
   bottom: {
     flex: 1,
