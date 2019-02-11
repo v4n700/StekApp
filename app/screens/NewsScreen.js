@@ -23,7 +23,7 @@ export default class NewsScreen extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white'
   },
   icon: {
     height: 34,

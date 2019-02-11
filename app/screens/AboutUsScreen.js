@@ -30,7 +30,7 @@ export default class AboutUsScreen extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white'
   },
   icon: {
     height: 34,
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '800',
     marginTop: verticalScale(19),
-    marginBottom: verticalScale(18)
+    marginBottom: verticalScale(18),
+    color: 'black'
   },
   bodyText: {
     fontFamily: 'Roboto',

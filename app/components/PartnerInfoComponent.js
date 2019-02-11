@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(17),
     fontFamily: 'Roboto',
     fontWeight: 'bold',
+    color: 'black',
     fontSize: 24
   },
   partnerLogo: {
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
     marginLeft: scale(10),
     fontFamily: 'Roboto',
     fontWeight: 'normal',
-    fontSize: 20
+    fontSize: 20,
+    color: 'black'
   }
 });

@@ -53,6 +53,8 @@ const styles = StyleSheet.create({
   spoilerText: {
     fontFamily: 'Roboto',
     fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black'
   },
   underSpoiler: {
     fontFamily: 'Roboto',

@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(10),
     fontFamily: 'Roboto',
     fontSize: moderateScale(24),
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'black'
   },
   underline: {
     marginTop: verticalScale(15),
