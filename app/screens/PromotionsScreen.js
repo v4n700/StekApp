@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
+import PromotionComponent from '../components/PromotionComponent';
 
 export default class PromotionsScreen extends Component{
   static navigationOptions = {
@@ -14,7 +15,9 @@ export default class PromotionsScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <Text>Акции</Text>
+        <ScrollView>
+          <PromotionComponent />
+        </ScrollView>
       </View>
     )
   }
