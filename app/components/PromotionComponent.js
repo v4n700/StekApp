@@ -33,8 +33,10 @@ const styles = StyleSheet.create({
   },
   promotionImage: {
     margin: '3%',
+    alignSelf: 'center',
     maxHeight: 400,
-    width: 'auto'
+    minHeight: 200,
+    width: '100%'
   },
   promotionText: {
     margin: '3%',

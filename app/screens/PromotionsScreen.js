@@ -42,7 +42,6 @@ export default class PromotionsScreen extends Component{
 
   renderPromotions = () => {
     return this.state.promotions.map((promotion, i) => {
-      Alert.alert('hui', JSON.stringify(promotion.image))
       return (
         <PromotionComponent key={i} title={promotion.title}  description={promotion.description} image={promotion.image}/>
       )
