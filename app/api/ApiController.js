@@ -2,11 +2,9 @@ import { Alert, AsyncStorage } from 'react-native'
 
 export default class ApiController {
   constructor() {
-    this.apiDomain = "northern-rocket.com/api/"
+    this.apiDomain = "192.168.1.112:8000/"
     this.apiUrl = "http://" + this.apiDomain
     this.wsUrl = "ws://" + this.apiDomain
-    this.accessToken = null
-    this.refreshToken = null
   }
 
   call = async (route, method, content, headers, body) => {
@@ -41,6 +39,18 @@ export default class ApiController {
           reject({ status: -1, message: e.message })
         })
     })
+  }
+
+  callAutoRefresh = async (route, method, content, headers, body) => {
+    return new Promise(
+      (resolve, reject) => {
+          this.call(route, method, content, headers, body).then(
+            (response) => {
+              resolve(response)
+            }, (error) => {
+                reject(error)
+            })
+      })
   }
 
   callForm = async (route, method, headers, body) => {

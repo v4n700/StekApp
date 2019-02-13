@@ -11,23 +11,9 @@ export default class PromotionComponent extends Component {
   render() {
     return (
       <View style = {styles.container}>
-          <Text style={styles.headerText}>ДОХУЯ АКЦИЯ</Text>
-          <Image style={styles.promotionImage} resizeMode="contain" source={require('../assets/test/promotion.jpg')} />
-          <Text style={styles.promotionText}>
-          ШаваСет по невероятной скидке - попробуй с другом:
-          🔸Наггетсы L
-          🔸Шаверма по-американски - 2 шт
-          🔸Шаверма по-турецки - 2 шт
-          🔸Картофель фри L - 2 шт
-          🔸Морс 1л
-          🔸2 соуса на выбор
-
-          ❗Акция действует с 11.02 по 17.02❗
-
-          Оформи карту и получи двойную выгоду:
-          ✔После первой покупки зачисляется 50 рублей в подарок.
-          ✔По карте с каждой покупки зачисляется 5%. Бонусами можно оплатить до 50% от покупки.
-          </Text>
+          <Text style={styles.headerText}>{this.props.title}</Text>
+          <Image style={styles.promotionImage} resizeMode="contain" source={{uri : this.props.image}} />
+          <Text style={styles.promotionText}>{this.props.description}</Text>
           <View style={styles.underline}/>
       </View>
     );
