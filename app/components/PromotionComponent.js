@@ -6,13 +6,30 @@ import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 export default class PromotionComponent extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      imgWidth: 0,
+      imgHeight: 0,
+    }
+  }
+
+
+  componentDidMount() {
+    Image.getSize(this.props.image, (width, height) => {
+      // calculate image width and height 
+      const screenWidth = Dimensions.get('window').width - 10
+      const scaleFactor = width / screenWidth
+      const imageHeight = height / scaleFactor
+      this.setState({imgWidth: screenWidth, imgHeight: imageHeight})
+    })
   }
 
   render() {
+    const {imgWidth, imgHeight} = this.state
     return (
       <View style = {styles.container}>
           <Text style={styles.headerText}>{this.props.title}</Text>
-          <Image style={styles.promotionImage} resizeMode="contain" source={{uri : this.props.image}} />
+          <Image style={{width: imgWidth, height: imgHeight, alignSelf:'center'}} source={{uri : this.props.image}} />
           <Text style={styles.promotionText}>{this.props.description}</Text>
           <View style={styles.underline}/>
       </View>
@@ -30,13 +47,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: '3%',
     textAlign: 'center'
-  },
-  promotionImage: {
-    margin: '3%',
-    alignSelf: 'center',
-    maxHeight: 400,
-    minHeight: 200,
-    width: '100%'
   },
   promotionText: {
     margin: '3%',
