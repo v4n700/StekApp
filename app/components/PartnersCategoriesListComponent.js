@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Alert, Dimensions, Platform} from 'react-native';
+import {View, Text, StyleSheet, Image, FlatList, Alert, Dimensions, ScrollView, RefreshControl, AsyncStorage} from 'react-native';
 
 import RoundCategoryComponent from '../components/RoundCategoryComponent';
 
@@ -34,27 +34,22 @@ export default class PartnersCategoriesListComponent extends Component{
   renderCategories = () => {
     return this.state.categories.map((category) => {
       return (
-        <RoundCategoryComponent key={category.id} categoryName={category.name} navigation={this.props.navigation} imagePath={require('../assets/categories/Services.png')}/>
+        <RoundCategoryComponent 
+          key={category.id} 
+          categoryName={category.name} 
+          imagePath={category.image}
+          categoryID={category.id}
+          navigation={this.props.navigation} 
+        />
       )
     }); 
   }
 
   render(){
     return(
-          <ScrollView alwaysBounceVertical={false}>
+          <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getCategories}/>}>
             {this.renderCategories()}
           </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  category: {
-    width: 90,
-    height: 90
-  },
-  categoryOthers: {
-    width: 74,
-    height: 74
-  },
-});

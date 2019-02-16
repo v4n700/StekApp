@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Alert} from 'react-native';
-
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { CachedImage, ImageCacheProvider } from 'react-native-cached-image';
 
 export default class RoundCategoryComponent extends Component{
 
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-    
-  }
+
+
   render() {
     const { navigation } = this.props
     return(
       <View style={styles.container}>
-        <TouchableOpacity style={styles.opacity} onPress={()=> navigation.navigate('PartnersListScreen')}>
+        <TouchableOpacity style={styles.opacity} onPress={()=> navigation.navigate('PartnersListScreen', {categoryID :this.props.categoryID})}>
           <View style={styles.shadow}>
-            <Image source={(this.props.imagePath)} style={styles.roundImageView}/>
+            <CachedImage source={{uri : this.props.imagePath}} style={styles.roundImageView}/>
           </View>
           <Text multiline={true} style={styles.categoryName}>{this.props.categoryName}</Text>
         </TouchableOpacity>
@@ -30,7 +29,7 @@ export default class RoundCategoryComponent extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: '3%'
+
   },
   shadow: {
     shadowColor: 'gray',
@@ -43,10 +42,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   roundImageView: {
+    marginTop: '3%',
     width: scale(80),
     height: scale(80)
   },
   categoryName: {
+    marginTop: '3%',
     marginLeft: '6%',
     width:'70%',
     fontFamily: 'Roboto',

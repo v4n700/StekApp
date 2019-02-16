@@ -5,9 +5,9 @@ export default class PartnersController {
     this.apiHelper = apiHelper
   }
 
-  GetPartners = async () => {
+  GetPartners = async (id) => {
     return new Promise((resolve, reject) => {
-      this.apiHelper.callJSON("actions/", "GET", {}, undefined).then(
+      this.apiHelper.callJSON("partners/category/" + id + "/", "GET", {}, undefined).then(
         (response) => {
           resolve(response.result)
         }, (error) => {

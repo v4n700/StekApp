@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo'
 
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
@@ -14,7 +14,7 @@ export default class PartnerInfoComponent extends Component {
       <ScrollView style = {styles.container} alwaysBounceVertical={false}>
         <View style={styles.header}>
           <Text style={styles.headerText}> {this.props.categoryName} </Text>
-          <Image source={(this.props.imagePath)} style={styles.partnerLogo}/>
+          <Image source={{uri:this.props.imagePath}} style={styles.partnerLogo}/>
         </View>
         <View style={styles.bodyTextRowView}>
           <Icon name="info" size={24} color="#E37926"/>
