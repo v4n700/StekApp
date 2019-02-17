@@ -1,0 +1,16 @@
+export default class MapController {
+  constructor(apiHelper) {
+    this.apiHelper = apiHelper
+  }
+
+  GetLocations = async () => {
+    return new Promise((resolve, reject) => {
+      this.apiHelper.callJSON("partners/locations/", "GET", {}, undefined).then(
+        (response) => {
+          resolve(response.result)
+        }, (error) => {
+          reject(error)
+        })
+    })
+  }
+}

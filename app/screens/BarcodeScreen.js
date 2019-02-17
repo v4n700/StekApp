@@ -9,7 +9,7 @@ export default class BarcodeScreen extends Component{
       <View style={styles.container}>
 
         <View style={styles.barcodeView}>
-          <Barcode value="102345678902" format="EAN13" text="Штрих-код вашей карты СТЭК" flat/>
+          <Barcode value="2750901141111" format="CODE128" text="Штрих-код вашей карты СТЭК" flat/>
         </View>
 
 

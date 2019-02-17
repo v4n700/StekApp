@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform, Alert} from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo'
 
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import PartnerInfoTextViewComponent from './PartnerInfoTextViewComponent';
 
 export default class PartnerInfoComponent extends Component {
   constructor(props) {
@@ -16,22 +16,11 @@ export default class PartnerInfoComponent extends Component {
           <Text style={styles.headerText}> {this.props.categoryName} </Text>
           <Image source={{uri:this.props.imagePath}} style={styles.partnerLogo}/>
         </View>
-        <View style={styles.bodyTextRowView}>
-          <Icon name="info" size={24} color="#E37926"/>
-          <Text multiline={true} style={styles.bodyText}>{this.props.description}</Text>
-        </View>
-        <View style={styles.bodyTextRowView}>
-          <Icon name="location-pin" size={24} color="#E37926"/>
-          <Text style={styles.bodyText}>{this.props.address}</Text>
-        </View>
-        <View style={styles.bodyTextRowView}>
-          <Icon name="phone" size={24} color="#E37926"/>
-          <Text style={styles.bodyText}>{this.props.phoneNumber}</Text>
-        </View>
-        <View style={styles.bodyTextRowView}>
-          <Icon name="link" size={24} color="#E37926"/>
-          <Text style={styles.bodyText}>{this.props.link}</Text>
-        </View>
+        <PartnerInfoTextViewComponent text={this.props.description} iconName={'info'}/>
+        <PartnerInfoTextViewComponent text={this.props.discount} iconName={'phone'}/>
+        <PartnerInfoTextViewComponent text={this.props.address} iconName={'location-pin'}/>
+        <PartnerInfoTextViewComponent text={this.props.phoneNumber} iconName={'phone'}/>
+        <PartnerInfoTextViewComponent text={this.props.link} iconName={'link'}/>
       </ScrollView>
     );
   }

@@ -22,7 +22,7 @@ export default class PartnerCardComponent extends Component{
         <Image source={{uri : this.props.image}} resizeMode="contain" style={styles.partnerLogo}/>
         <View style={styles.textView}>
           <Text style={styles.upperText}>{this.props.discount}</Text>
-          <Text style={styles.partnerName}>{this.props.partnerName}</Text> 
+          <Text multiline={true} style={styles.partnerName}>{this.props.partnerName}</Text> 
         </View>
         </TouchableOpacity>
           <View style={styles.underline}/>
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
   },
   textView: {
     flexDirection: 'column',
-    marginLeft: scale(10)
+    marginLeft: scale(10),
+    flex: 1
   },
   partnerLogo: {
     marginTop: verticalScale(15),
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontSize: moderateScale(24),
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
   },
   underline: {
     marginTop: verticalScale(15),
