@@ -35,8 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
             new MapsPackage(),
             new VectorIconsPackage(),
             new SplashScreenReactPackage(),
-            new RNGestureHandlerPackage(),
-            new RNFetchBlobPackage()
+            new RNGestureHandlerPackage()
       );
     }
 

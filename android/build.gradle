@@ -2,10 +2,10 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "28.0.2"
+        buildToolsVersion = "28.0.3"
         minSdkVersion = 16
         compileSdkVersion = 28
-        targetSdkVersion = 27
+        targetSdkVersion = 28
         supportLibVersion = "28.0.0"
     }
     repositories {
@@ -14,7 +14,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        compile project(':rn-fetch-blob')
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
