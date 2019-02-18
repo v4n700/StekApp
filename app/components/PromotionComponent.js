@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform} from 'react-native';
+import {View, Text, StyleSheet, Image, Alert, ScrollView, Dimensions, Platform} from 'react-native';
 
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
@@ -12,9 +12,11 @@ export default class PromotionComponent extends Component {
     return (
       <View style = {styles.container}>
           <Text style={styles.headerText}>{this.props.title}</Text>
-          <Image style={styles.promotionImage} resizeMode="contain" source={{uri : this.props.image}} />
           <Text style={styles.promotionText}>{this.props.description}</Text>
           <View style={styles.underline}/>
+          <Image source = { {uri: this.props.image } }
+   style = {{ width: 200, height: 200 }}  resizeMode = "contain"
+   />
       </View>
     );
   }
