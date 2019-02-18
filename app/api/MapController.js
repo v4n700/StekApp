@@ -1,3 +1,5 @@
+import { Alert, AsyncStorage } from 'react-native'
+
 export default class MapController {
   constructor(apiHelper) {
     this.apiHelper = apiHelper
@@ -9,6 +11,7 @@ export default class MapController {
         (response) => {
           resolve(response.result)
         }, (error) => {
+          Alert.alert('Не удалось получить метки с сервера')
           reject(error)
         })
     })

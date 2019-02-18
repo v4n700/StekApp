@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
+    textAlign: 'center'
   },
   underSpoiler: {
     fontFamily: 'Roboto',

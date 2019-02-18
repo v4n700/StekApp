@@ -1,8 +1,8 @@
-import { Alert, AsyncStorage } from 'react-native'
+import { Alert, AsyncStorage } from 'react-native';
 
 export default class ApiController {
   constructor() {
-    this.apiDomain = "192.168.1.112:8000/"
+    this.apiDomain = "northern-rocket.com/"
     this.apiUrl = "http://" + this.apiDomain
     this.wsUrl = "ws://" + this.apiDomain
   }

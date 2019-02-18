@@ -1,3 +1,5 @@
+import { Alert, AsyncStorage } from 'react-native';
+
 export default class NewsController {
   constructor(apiHelper) {
     this.apiHelper = apiHelper
@@ -9,6 +11,7 @@ export default class NewsController {
         (response) => {
           resolve(response.result)
         }, (error) => {
+          Alert.alert('Ошибка при соединении с сервером')
           reject(error)
         })
     })

@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
 import HeaderComponent from '../components/HeaderComponent';
+import CircleLinksComponent from '../components/CircleLinksComponent';
 
 export default class AboutUsScreen extends Component{
   static navigationOptions = {
@@ -19,8 +20,9 @@ export default class AboutUsScreen extends Component{
           <Text style={styles.headerText}>Что такое СТЭК?</Text>
           <Text style={styles.bodyText}>Тут куча всякого текста всякого текста всякого текста всякого текста всякого текста всякого текста</Text>
         </View>
-        <View style={styles.underlineShadow}>
-          <View style={styles.underline}/>
+        <View style={styles.links}>
+          <CircleLinksComponent imagePath={require('../assets/menu/svyaz/vk/drawable-hdpi/Group.png')} link='https://vk.com/card_stec'/>
+          <CircleLinksComponent imagePath={require('../assets/menu/svyaz/instagram/drawable-hdpi/Group.png')} link='https://www.instagram.com/diskontstec'/>
         </View>
       </View>
     )
@@ -64,5 +66,10 @@ const styles = StyleSheet.create({
     shadowColor: 'gray',
     shadowOffset: {height: verticalScale(2), width: 0},
     shadowOpacity: 1
+  },
+  links: {
+    flexDirection:'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });

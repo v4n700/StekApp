@@ -16,8 +16,24 @@ export default class FAQScreen extends Component{
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
         <SpoilerComponent
-          spoilerText = 'Секретная база ЦРУ'
-          underSpoiler = 'И в ней сидят: Контр-адмирал бибис и мистер Майский-Жуковский'
+          spoilerText = 'Что делать если потерял СТЭК?'
+          underSpoiler = 'Тут ответ на вопрос'
+        />
+        <SpoilerComponent
+          spoilerText = 'Хочу скидку в заведении, где нет СТЭК'
+          underSpoiler = 'Тут ответ на вопрос'
+        />
+        <SpoilerComponent
+          spoilerText = 'Мне не сделали скидку, где действует СТЭК!'
+          underSpoiler = 'Тут ответ на вопрос'
+        />
+        <SpoilerComponent
+          spoilerText = 'Что делать, если у меня непродленный СТЭК?'
+          underSpoiler = 'Тут ответ на вопрос'
+        />
+        <SpoilerComponent
+          spoilerText = 'Заметил недочёт/ошибку в приложении, что делать?'
+          underSpoiler = 'Тут ответ на вопрос'
         />
       </View>
     )

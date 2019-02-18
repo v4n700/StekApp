@@ -1,4 +1,4 @@
-import { Alert, AsyncStorage } from 'react-native'
+import { Alert, AsyncStorage } from 'react-native';
 
 export default class PromotionsController {
   constructor(apiHelper) {
@@ -11,6 +11,7 @@ export default class PromotionsController {
         (response) => {
           resolve(response.result)
         }, (error) => {
+          Alert.alert('Ошибка при соединении с сервером')
           reject(error)
         })
     })
