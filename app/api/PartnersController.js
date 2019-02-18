@@ -1,11 +1,13 @@
-export default class NewsController {
+import { Alert, AsyncStorage } from 'react-native'
+
+export default class PartnersController {
   constructor(apiHelper) {
     this.apiHelper = apiHelper
   }
 
-  GetNews = async () => {
+  GetPartners = async (id) => {
     return new Promise((resolve, reject) => {
-      this.apiHelper.callJSON("feed/", "GET", {}, undefined).then(
+      this.apiHelper.callJSON("partners/category/" + id + "/", "GET", {}, undefined).then(
         (response) => {
           resolve(response.result)
         }, (error) => {

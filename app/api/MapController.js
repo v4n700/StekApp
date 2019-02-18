@@ -1,11 +1,11 @@
-export default class NewsController {
+export default class MapController {
   constructor(apiHelper) {
     this.apiHelper = apiHelper
   }
 
-  GetNews = async () => {
+  GetLocations = async () => {
     return new Promise((resolve, reject) => {
-      this.apiHelper.callJSON("feed/", "GET", {}, undefined).then(
+      this.apiHelper.callJSON("partners/locations/", "GET", {}, undefined).then(
         (response) => {
           resolve(response.result)
         }, (error) => {

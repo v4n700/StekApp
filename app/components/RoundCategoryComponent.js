@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Alert} from 'react-native';
+import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { CachedImage, ImageCacheProvider } from 'react-native-cached-image';
 
 export default class RoundCategoryComponent extends Component{
 
@@ -7,16 +9,18 @@ export default class RoundCategoryComponent extends Component{
     super(props);
   }
 
+
   render() {
     const { navigation } = this.props
     return(
       <View style={styles.container}>
-        <TouchableOpacity style={styles.opacity} onPress={()=> navigation.navigate('PartnersListScreen')}>
+        <TouchableOpacity style={styles.opacity} onPress={()=> navigation.navigate('PartnersListScreen', {categoryID :this.props.categoryID})}>
           <View style={styles.shadow}>
-            <Image source={(this.props.imagePath)} style={[styles.roundImageView, this.props.style]}/>
+            <CachedImage source={{uri : this.props.imagePath}} style={styles.roundImageView}/>
           </View>
           <Text multiline={true} style={styles.categoryName}>{this.props.categoryName}</Text>
         </TouchableOpacity>
+        <View style={styles.underline}/>
       </View>
     );
   }
@@ -25,10 +29,7 @@ export default class RoundCategoryComponent extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    height: 120,
-    width: 120,
-  },
-  roundImageView: {
+
   },
   shadow: {
     shadowColor: 'gray',
@@ -36,14 +37,27 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
   },
   opacity: {
+    marginLeft: '3%',
     alignItems: 'center',
-    justifyContent: 'center'
+    flexDirection: 'row'
+  },
+  roundImageView: {
+    marginTop: '3%',
+    width: scale(80),
+    height: scale(80)
   },
   categoryName: {
-    marginTop: 5,
-    textAlign: 'center',
+    marginTop: '3%',
+    marginLeft: '6%',
+    width:'70%',
     fontFamily: 'Roboto',
+    fontSize: scale(17),
     fontWeight: '900',
     color: '#828282'
+  },
+  underline: {
+    marginTop: '3%',
+    height: verticalScale(2),
+    backgroundColor: 'rgba(166, 166, 173, 0.3)'
   }
 });

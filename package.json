@@ -17,7 +17,9 @@
     "react-native-svg": "^9.2.4",
     "react-native-vector-icons": "^6.2.0",
     "react-navigation": "^3.0.9",
-    "react-timer-mixin": "^0.13.4"
+    "react-timer-mixin": "^0.13.4",
+    "react-native-cached-image": "https://github.com/fungilation/react-native-cached-image",
+    "rn-fetch-blob": "^0.10.15"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",

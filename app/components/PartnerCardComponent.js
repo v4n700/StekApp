@@ -8,11 +8,21 @@ export default class PartnerCardComponent extends Component{
     const { navigation } = this.props
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.touch} onPress={()=> navigation.navigate('PartnerInfoScreen')}>
-        <Image source={require('../assets/test/coffessor.png')} resizeMode="contain" style={styles.partnerLogo}/>
+        <TouchableOpacity 
+          style={styles.touch} 
+          onPress={()=> navigation.navigate('PartnerInfoScreen', {
+            partnerName: this.props.partnerName,
+            discount:this.props.discount,
+            url:this.props.url,
+            image:this.props.image,
+            phone:this.props.phone,
+            address:this.props.address,
+            description:this.props.description
+          })}>
+        <Image source={{uri : this.props.image}} resizeMode="contain" style={styles.partnerLogo}/>
         <View style={styles.textView}>
-          <Text style={styles.upperText}>Скидка 15% </Text>
-          <Text style={styles.partnerName}>Coffessor</Text> 
+          <Text style={styles.upperText}>{this.props.discount}</Text>
+          <Text multiline={true} style={styles.partnerName}>{this.props.partnerName}</Text> 
         </View>
         </TouchableOpacity>
           <View style={styles.underline}/>
@@ -33,7 +43,8 @@ const styles = StyleSheet.create({
   },
   textView: {
     flexDirection: 'column',
-    marginLeft: scale(10)
+    marginLeft: scale(10),
+    flex: 1
   },
   partnerLogo: {
     marginTop: verticalScale(15),
@@ -51,7 +62,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontSize: moderateScale(24),
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
   },
   underline: {
     marginTop: verticalScale(15),
