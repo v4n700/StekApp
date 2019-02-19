@@ -16,9 +16,9 @@ export default class PartnerInfoComponent extends Component {
           <Text style={styles.headerText}> {this.props.categoryName} </Text>
           <Image source={{uri:this.props.imagePath}} style={styles.partnerLogo}/>
         </View>
-        <PartnerInfoTextViewComponent text={this.props.description} iconName={'info'}/>
-        <PartnerInfoTextViewComponent text={this.props.discount} iconName={'phone'}/>
-        <PartnerInfoTextViewComponent text={this.props.address} iconName={'location-pin'}/>
+        <PartnerInfoTextViewComponent text={this.props.description} iconName={'description'}/>
+        <PartnerInfoTextViewComponent text={this.props.discount} iconName={'percent'}/>
+        <PartnerInfoTextViewComponent text={this.props.address} iconName={'marker'}/>
         <PartnerInfoTextViewComponent text={this.props.phoneNumber} iconName={'phone'}/>
         <PartnerInfoTextViewComponent text={this.props.link} iconName={'link'}/>
       </ScrollView>

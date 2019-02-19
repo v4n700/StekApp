@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   roundImageView: {
-    marginTop: '3%',
+    marginTop: '5%',
     width: scale(80),
     height: scale(80)
   },

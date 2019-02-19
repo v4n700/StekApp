@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {Header, Left, Right, Icon, Body, Title} from 'native-base';
 
 
@@ -9,7 +9,9 @@ export default class HeaderComponent extends Component {
     return(
       <Header style={styles.header}>
         <Left style={styles.left}>
-          <Icon name="menu" style={styles.menuButton} onPress={() => navigation.openDrawer()}/>
+          <TouchableOpacity style={styles.opacity} onPress={() => navigation.openDrawer()}>
+            <Icon name="menu" style={styles.menuButton}/>
+          </TouchableOpacity>
           <Text style={styles.stek}>СТЭК</Text>
         </Left>
         <Right>
@@ -21,8 +23,12 @@ export default class HeaderComponent extends Component {
 
 const styles = StyleSheet.create({
   menuButton: {
-    marginLeft: 16,
     color: "white"
+  },
+  opacity: {
+    width: 50,
+    alignItems:'center',
+    justifyContent: 'center'
   },
   header: {
     backgroundColor: 'orange',

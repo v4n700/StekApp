@@ -73,6 +73,7 @@
 		<string>Phenomena-Light.ttf</string>
 		<string>Phenomena-Regular.ttf</string>
 		<string>Phenomena-Thin.ttf</string>
+		<string>stek.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
-import Icon from 'react-native-vector-icons/Entypo';
+import stekIconConfig from '../fonts/Stek/config.json';
+const Icon = createIconSetFromFontello(stekIconConfig);
 
 export default class PartnerInfoTextViewComponent extends Component {
   constructor(props) {
