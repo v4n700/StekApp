@@ -54,3 +54,18 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+android/app/src/main/res/drawable-hdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png
+android/app/src/main/res/drawable-mdpi/app_assets_drawersteklogo.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_menu_aboutus_drawablehdpi_group11.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_menu_faq_drawablehdpi_group16.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_menu_maps_drawablehdpi_group13.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_menu_news_drawablehdpi_group15.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_menu_partners_drawablehdpi_group12.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_menu_promotions_drawablehdpi_group14.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_svyaz_instagram_drawablehdpi_group.png
+android/app/src/main/res/drawable-mdpi/app_assets_menu_svyaz_vk_drawablehdpi_group.png
+android/app/src/main/res/drawable-mdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png
+android/app/src/main/res/drawable-mdpi/node_modules_reactnavigationstack_src_views_assets_backiconmask.png
+android/app/src/main/res/drawable-xhdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png
+android/app/src/main/res/drawable-xxhdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png
+android/app/src/main/res/drawable-xxxhdpi/node_modules_reactnavigationstack_src_views_assets_backicon.png
