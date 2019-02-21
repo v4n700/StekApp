@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
-import SpoilerComponent from '../components/SpoilerComponent';
+import FAQComponent from '../components/FAQComponent';
 
 export default class FAQScreen extends Component{
   static navigationOptions = {
@@ -15,26 +15,7 @@ export default class FAQScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <SpoilerComponent
-          spoilerText = 'Что делать если потерял СТЭК?'
-          underSpoiler = 'Тут ответ на вопрос'
-        />
-        <SpoilerComponent
-          spoilerText = 'Хочу скидку в заведении, где нет СТЭК'
-          underSpoiler = 'Тут ответ на вопрос'
-        />
-        <SpoilerComponent
-          spoilerText = 'Мне не сделали скидку, где действует СТЭК!'
-          underSpoiler = 'Тут ответ на вопрос'
-        />
-        <SpoilerComponent
-          spoilerText = 'Что делать, если у меня непродленный СТЭК?'
-          underSpoiler = 'Тут ответ на вопрос'
-        />
-        <SpoilerComponent
-          spoilerText = 'Заметил недочёт/ошибку в приложении, что делать?'
-          underSpoiler = 'Тут ответ на вопрос'
-        />
+        <FAQComponent navigation={this.props.navigation}/>
       </View>
     )
   }

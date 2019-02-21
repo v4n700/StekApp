@@ -40,7 +40,7 @@ export class SpoilerText extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: '3%'
+    marginTop: 20
   },
   head: {
     alignItems: 'center'
