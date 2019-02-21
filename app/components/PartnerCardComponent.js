@@ -25,7 +25,6 @@ export default class PartnerCardComponent extends Component{
           <Text multiline={true} style={styles.partnerName}>{this.props.partnerName}</Text> 
         </View>
         </TouchableOpacity>
-          <View style={styles.underline}/>
       </View>
     );
   }
@@ -63,11 +62,5 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(24),
     fontWeight: 'bold',
     color: 'black',
-  },
-  underline: {
-    marginTop: verticalScale(15),
-    width: scale(322),
-    height: verticalScale(3),
-    backgroundColor: 'rgba(166, 166, 173, 0.3)'
   }
 });

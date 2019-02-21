@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView, Alert} from 'react-native';
 
 import PartnersCategoriesListComponent from '../components/PartnersCategoriesListComponent';
 import HeaderComponent from '../components/HeaderComponent';
@@ -11,6 +11,7 @@ export default class PartnersScreen extends Component{
       <Image source={require('../assets/menu/menu/Partners/drawable-hdpi/Group12.png')} style={styles.icon}/>
     )
   }
+
   render(){
     return (
       <View style={styles.container}>

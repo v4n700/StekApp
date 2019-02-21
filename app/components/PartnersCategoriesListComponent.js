@@ -34,33 +34,6 @@ export default class PartnersCategoriesListComponent extends Component{
 
   keyExtractor = (item, index) => item.id.toString();
 
-  renderFooter = () => {
-    if (!this.state.loading) return null;
-
-    return (
-      <View
-        style={{
-          paddingVertical: 20,
-          borderTopWidth: 20,
-          borderColor: "red"
-        }}
-      >
-        <ActivityIndicator animating size="large" />
-      </View>
-    );
-};
-
-  handleLoadMore = () => {
-    this.setState(
-      {
-        page: this.state.page + 1
-      },
-      () => {
-        this.getCategories();
-      }
-    );
-  };
-
   renderSeparator = () => {
     return (
       <View

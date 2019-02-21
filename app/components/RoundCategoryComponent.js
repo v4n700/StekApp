@@ -20,7 +20,6 @@ export default class RoundCategoryComponent extends Component{
           </View>
           <Text multiline={true} style={styles.categoryName}>{this.props.categoryName}</Text>
         </TouchableOpacity>
-        {/* <View style={styles.underline}/> */}
       </View>
     );
   }
@@ -29,8 +28,7 @@ export default class RoundCategoryComponent extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    paddingBottom: '3%'
+    paddingBottom: '1%'
   },
   shadow: {
     shadowColor: 'gray',
@@ -55,10 +53,5 @@ const styles = StyleSheet.create({
     fontSize: scale(17),
     fontWeight: '900',
     color: '#828282'
-  },
-  underline: {
-    marginTop: '3%',
-    height: verticalScale(2),
-    backgroundColor: 'rgba(166, 166, 173, 0.3)'
   }
 });

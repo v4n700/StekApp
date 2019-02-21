@@ -11,6 +11,8 @@
     "react": "16.6.3",
     "react-native": "0.58.3",
     "react-native-barcode-builder": "^1.0.5",
+    "react-native-cached-image": "https://github.com/fungilation/react-native-cached-image",
+    "react-native-elements": "^1.0.0",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-maps": "^0.23.0",
     "react-native-splash-screen": "^3.1.1",
@@ -18,7 +20,6 @@
     "react-native-vector-icons": "^6.2.0",
     "react-navigation": "^3.0.9",
     "react-timer-mixin": "^0.13.4",
-    "react-native-cached-image": "https://github.com/fungilation/react-native-cached-image",
     "rn-fetch-blob": "^0.10.15"
   },
   "devDependencies": {

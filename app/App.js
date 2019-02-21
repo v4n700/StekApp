@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
-import {createDrawerNavigator, createAppContainer, DrawerItems, createStackNavigator} from 'react-navigation';
+import {createDrawerNavigator, createAppContainer, NavigationActions, createStackNavigator, StackActions} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 
 import PartnersScreen from './screens/PartnersHomeScreen';

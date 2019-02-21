@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView, Image, Alert, RefreshControl} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView, Image, Alert, RefreshControl, FlatList} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
 import HeaderComponent from '../components/HeaderComponent';
@@ -32,32 +32,47 @@ export default class PartnersListScreen extends Component {
       }
     )
   }
+  keyExtractor = (item, index) => item.name.toString();
 
-  renderPartners = () => {
-    return this.state.partners.map((partner, i) => {
-      return (
-        <PartnerCardComponent 
-          key={i} 
-          partnerName={partner.name} 
-          discount={partner.discount}
-          url={partner.url}
-          image={partner.image}
-          phone={partner.telephone}
-          address={partner.address}
-          description={partner.description}
-          navigation={this.props.navigation}
-          />
-      )
-    }); 
-  }
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          marginTop: '3%',
+          height: verticalScale(2),
+          backgroundColor: 'rgba(166, 166, 173, 0.3)'
+        }}
+      />
+    );
+  };
 
   render() {
     return (
     <View style={styles.container}>
       <HeaderComponent navigation = {this.props.navigation}/>
-      <ScrollView style={styles.scroll} refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getPartners}/>}>
+      <FlatList 
+          data={this.state.partners}
+          keyExtractor={this.keyExtractor}
+          ItemSeparatorComponent={this.renderSeparator}
+          refreshing={this.state.refreshing}
+          ListEmptyComponent={<Text style={styles.emptyText}>Ожидается появление партнеров</Text>}
+          onRefresh={this.getPartners}
+          renderItem={({item}) => 
+            <PartnerCardComponent 
+              partnerName={item.name} 
+              discount={item.discount}
+              url={item.url}
+              image={item.image}
+              phone={item.telephone}
+              address={item.address}
+              description={item.description}
+              navigation={this.props.navigation}
+            />
+          }
+      />
+      {/* <ScrollView style={styles.scroll} refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getPartners}/>}>
         {this.renderPartners()}
-      </ScrollView>
+      </ScrollView> */}
     </View>
     );
   }
@@ -70,5 +85,10 @@ const styles = StyleSheet.create({
   },
   scroll: {
     marginLeft: scale(9)
+  },
+  emptyText: {
+    fontFamily: 'Roboto',
+    fontSize: 22,
+    textAlign:'center'
   }
 });
