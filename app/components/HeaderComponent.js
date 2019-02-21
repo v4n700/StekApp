@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, StatusBar} from 'react-native';
 import {Header, Left, Right, Icon, Body, Title} from 'native-base';
 
 
@@ -8,6 +8,7 @@ export default class HeaderComponent extends Component {
     const { navigation } = this.props;
     return(
       <Header style={styles.header}>
+        <StatusBar backgroundColor="orange" barStyle="light-content" />
         <Left style={styles.left}>
           <TouchableOpacity style={styles.opacity} onPress={() => navigation.openDrawer()}>
             <Icon name="menu" style={styles.menuButton}/>
@@ -23,24 +24,28 @@ export default class HeaderComponent extends Component {
 
 const styles = StyleSheet.create({
   menuButton: {
-    color: "white"
+    color: "white",
+    marginLeft: 8
   },
   opacity: {
-    width: 50,
-    alignItems:'center',
-    justifyContent: 'center'
+    width: 60,
+    height: 50,
+    justifyContent:'center'
   },
   header: {
     backgroundColor: 'orange',
   },
   left: {
     flexDirection: 'row',
+    alignItems:'center'
   },
   stek: {
     fontSize: 22,
     fontFamily: 'Roboto',
     color: 'white',
-    marginLeft: 32,
-    fontWeight: 'bold'
+    marginLeft: 18,
+    fontWeight: 'bold',
+    justifyContent: 'center',
+    marginBottom: 1
   },
 });

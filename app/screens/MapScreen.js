@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, Alert} from 'react-native';
+import {View, Text, StyleSheet, Image, Alert, StatusBar} from 'react-native';
 import MapView from 'react-native-maps';
 
 import HeaderComponent from '../components/HeaderComponent';
@@ -30,7 +30,7 @@ export default class MapScreen extends Component{
     await API.Map().GetLocations().then(
       async(response) => {
         // Alert.alert(JSON.stringify(response))
-        this.setState({ locations: response})
+        this.setState({locations: response})
       }, (error) => {
 
       }
