@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView, Image, Alert, RefreshControl, FlatList} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView, Image, Alert, RefreshControl, FlatList, SafeAreaView} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { Toolbar } from 'react-native-material-ui';
 
-import HeaderComponent from '../components/HeaderComponent';
 import PartnerCardComponent from '../components/PartnerCardComponent';
 
 import API from '../api/API';
@@ -12,9 +12,12 @@ export default class PartnersListScreen extends Component {
     super(props);
 
     this.state = {
+      data: [],
       refreshing: false,
       partners: []
     }
+
+    this.arrayholder = [];
   }
 
   async componentDidMount() {
@@ -27,6 +30,7 @@ export default class PartnersListScreen extends Component {
     await API.Partners().GetPartners(this.props.navigation.getParam('categoryID')).then(
       async(response) => {
         this.setState({ partners: response, refreshing: false })
+        this.arrayholder = response;
       }, (error) => {
         this.setState({ refreshing: false })
       }
@@ -46,10 +50,32 @@ export default class PartnersListScreen extends Component {
     );
   };
 
+  searchFilterFunction = text => {    
+    const newData = this.arrayholder.filter(item => {      
+      const itemData = `${item.name.toUpperCase()}`;
+       const textData = text.toUpperCase();
+        
+       return itemData.indexOf(textData) > -1;    
+    });    
+    this.setState({ partners: newData });  
+  };
+
   render() {
     return (
     <View style={styles.container}>
-      <HeaderComponent navigation = {this.props.navigation}/>
+      <SafeAreaView style={styles.safeAreaView}>
+        <Toolbar
+          leftElement="menu"
+          centerElement="СТЭК"
+          style={{ container: { backgroundColor: 'orange' } }}
+          searchable={{
+            autoFocus: true,
+            placeholder: 'Поиск',
+            onChangeText: text => this.searchFilterFunction(text)
+          }}
+          onLeftElementPress={() => this.props.navigation.openDrawer()}
+        />
+      </SafeAreaView>
       <FlatList 
           data={this.state.partners}
           keyExtractor={this.keyExtractor}
@@ -70,9 +96,6 @@ export default class PartnersListScreen extends Component {
             />
           }
       />
-      {/* <ScrollView style={styles.scroll} refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getPartners}/>}>
-        {this.renderPartners()}
-      </ScrollView> */}
     </View>
     );
   }
@@ -82,6 +105,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white'
+  },
+  safeAreaView: {
+    backgroundColor: 'orange',
+    shadowColor: 'gray',
+    shadowOffset: {height: 1, width: 0},
+    shadowOpacity: 0.5,
   },
   scroll: {
     marginLeft: scale(9)

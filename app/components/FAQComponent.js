@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, FlatList, Alert, Dimensions, ScrollView, RefreshControl, AsyncStorage} from 'react-native';
+import {View, FlatList} from 'react-native';
 import SpoilerComponent from '../components/SpoilerComponent';
 
 import API from '../api/API';
@@ -9,11 +9,6 @@ export default class FAQComponent extends Component{
     super(props);
 
     this.state = {
-      loading: false,
-      data: [],
-      page: 1,
-      seed: 1,
-      error: null,
       refreshing: false,
       questions: []
     }
@@ -22,30 +17,6 @@ export default class FAQComponent extends Component{
   async componentDidMount() {
     this.getFAQs();
   }
-
-  handleRefresh = () => {
-    this.setState(
-      {
-        page: 1,
-        seed: this.state.seed + 1,
-        refreshing: true
-      },
-      () => {
-        this.getFAQs();
-      }
-    );
-  };
-
-  handleLoadMore = () => {
-    this.setState(
-      {
-        page: this.state.page + 1
-      },
-      () => {
-        this.getFAQs();
-      }
-    );
-  };
 
   renderSeparator = () => {
     return (
@@ -76,25 +47,24 @@ export default class FAQComponent extends Component{
 
   render(){
     return(
-          <FlatList
-              style={{
-                flex: 1,
-                backgroundColor: 'white',
-              }}
-              data={this.state.questions}
-              onRefresh={this.handleRefresh}
-              refreshing={this.state.refreshing}
-              keyExtractor={this.keyExtractor}
-              renderItem={({item}) =>
-                <View>
-                  <SpoilerComponent
-                    spoilerText={item.question} 
-                    underSpoiler={item.answer}
-                  />
-                </View>
-                 
-            }
-          />
+      <FlatList
+        style={{
+          flex: 1,
+          backgroundColor: 'white',
+        }}
+        data={this.state.questions}
+        onRefresh={this.getFAQs}
+        refreshing={this.state.refreshing}
+        keyExtractor={this.keyExtractor}
+        renderItem={({item}) =>
+          <View>
+            <SpoilerComponent
+              spoilerText={item.question} 
+              underSpoiler={item.answer}
+            />
+          </View>
+        }
+      />
     );
   }
 }
