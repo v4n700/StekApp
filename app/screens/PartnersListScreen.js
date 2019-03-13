@@ -81,7 +81,6 @@ export default class PartnersListScreen extends Component {
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderSeparator}
           refreshing={this.state.refreshing}
-          ListEmptyComponent={<Text style={styles.emptyText}>Ожидается появление партнеров</Text>}
           onRefresh={this.getPartners}
           renderItem={({item}) => 
             <PartnerCardComponent 
