@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import {StackActions, NavigationActions} from 'react-navigation';
 
 import HeaderComponent from '../components/HeaderComponent';
 import CircleLinksComponent from '../components/CircleLinksComponent';
@@ -12,6 +13,7 @@ export default class AboutUsScreen extends Component{
       <Image source={require('../assets/menu/menu/AboutUs/drawable-hdpi/Group11.png')} style={styles.icon}/>
     )
   }
+
   render(){
     return (
       <View style={styles.container}>

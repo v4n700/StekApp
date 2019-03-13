@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
-import {createDrawerNavigator, createAppContainer, NavigationActions, createStackNavigator, StackActions} from 'react-navigation';
+import {createDrawerNavigator, createAppContainer, NavigationActions, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 
 import PartnersScreen from './screens/PartnersHomeScreen';
@@ -28,6 +28,8 @@ export default class App extends Component{
   }
 }
 
+
+
 const StackNavigator = createStackNavigator(
   {
     PartnersScreen: PartnersScreen,
@@ -36,7 +38,9 @@ const StackNavigator = createStackNavigator(
     BarcodeScreen: BarcodeScreen
   },
   {
-    headerMode: 'none'
+    headerMode: 'none',
+    stateName: 'PartnersNav',
+    initialRouteName: 'PartnersScreen'
   }
 )
 
@@ -57,6 +61,7 @@ const AppDrawerNavigator = createDrawerNavigator({
   FAQScreen: FAQScreen
 }, {
   contentComponent: CustomDrawerComponent,
+  initialRouteName: 'PartnersScreen',
   contentOptions: {
     activeTintColor: 'orange',
     labelStyle:{fontFamily:'Phenomena'}
