@@ -82,10 +82,11 @@ export default class PartnersScreen extends Component{
             onLeftElementPress={() => this.props.navigation.openDrawer()}
           />
         </SafeAreaView>
-        <FlatList 
+        <FlatList
           data={this.state.categories}
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderSeparator}
+          contentContainerStyle={{paddingBottom: '4%'}}
           refreshing={this.state.refreshing}
           onRefresh={this.getCategories}
           renderItem={({item}) => 

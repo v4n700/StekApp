@@ -80,6 +80,7 @@ export default class PartnersListScreen extends Component {
           data={this.state.partners}
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderSeparator}
+          contentContainerStyle={{paddingLeft: '3%'}}
           refreshing={this.state.refreshing}
           onRefresh={this.getPartners}
           renderItem={({item}) => 
