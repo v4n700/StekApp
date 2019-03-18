@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
 import {createDrawerNavigator, createAppContainer, NavigationActions, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
+import firebase from 'react-native-firebase';
 
 import PartnersScreen from './screens/PartnersHomeScreen';
 import PromotionsScreen from './screens/PromotionsScreen';
@@ -20,6 +21,24 @@ import CustomDrawerComponent from './components/CustomDrawerComponent';
 export default class App extends Component{
   componentDidMount() {
     SplashScreen.hide()
+    firebase.messaging().hasPermission()
+    .then(enabled => {
+      if (enabled) {
+        firebase.messaging().getToken().then(token => {
+          console.log("LOG: ", token);
+        })
+        // user has permissions
+      } else {
+        firebase.messaging().requestPermission()
+          .then(() => {
+            alert("User Now Has Permission")
+          })
+          .catch(error => {
+            alert("Error", error)
+            // User has rejected permissions  
+          });
+      }
+    });
   }
   render() {
     return (

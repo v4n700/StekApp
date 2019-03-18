@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity, StatusBar, SafeAreaView} from 'react-native';
-import {Header, Left, Right, Icon, Body, Title} from 'native-base';
+import {StyleSheet, SafeAreaView} from 'react-native';
 import { Toolbar } from 'react-native-material-ui';
 
 
