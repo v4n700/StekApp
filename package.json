@@ -12,6 +12,7 @@
     "react-native": "0.58.3",
     "react-native-barcode-builder": "^1.0.5",
     "react-native-cached-image": "https://github.com/fungilation/react-native-cached-image",
+    "react-native-fcm": "https://github.com/evollu/react-native-fcm",
     "react-native-elements": "^1.0.0",
     "react-native-firebase": "^5.2.3",
     "react-native-gesture-handler": "^1.0.15",
