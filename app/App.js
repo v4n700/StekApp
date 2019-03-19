@@ -28,8 +28,9 @@ export default class App extends Component{
     .then(enabled => {
       if (enabled) {
         firebase.messaging().getToken().then(token => {
-          API.Token().SetToken(token);
-          console.log("LOG: ", token);
+          this.postToken(token)
+          // API.Token().SetToken(token);
+          // console.log("LOG: ", token);
         })
         // user has permissions
       } else {
@@ -44,6 +45,24 @@ export default class App extends Component{
       }
     });
   }
+
+  postToken = async (token) => {
+    firstLaunch = await AsyncStorage.getItem('@FirstLaunch', false)
+    if (firstLaunch) {
+      return;
+    }
+
+    await API.Token().SetToken(token).then(
+      async(response) => {
+        if (response.status === 201) {
+          await AsyncStorage.setItem('@FirstLaunch', JSON.stringify(true))
+        }
+      }, (error) => {
+
+      }
+    )
+  }
+
   render() {
     return (
       <Drawer/>
@@ -57,8 +76,8 @@ const StackNavigator = createStackNavigator(
   {
     PartnersScreen: PartnersScreen,
     PartnersListScreen: PartnersListScreen,
-    PartnerInfoScreen: PartnerInfoScreen,
-    BarcodeScreen: BarcodeScreen
+    PartnerInfoScreen: PartnerInfoScreen
+    // BarcodeScreen: BarcodeScreen
   },
   {
     headerMode: 'none',

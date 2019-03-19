@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, SafeAreaView} from 'react-native';
+import {StyleSheet, SafeAreaView, StatusBar} from 'react-native';
 import { Toolbar } from 'react-native-material-ui';
 
 
@@ -11,7 +11,7 @@ export default class HeaderComponent extends Component {
         <Toolbar
           leftElement="menu"
           centerElement="СТЭК"
-          style={{ container: { backgroundColor: 'orange' } }}
+          style={{ container: { backgroundColor: '#ffa500' } }}
           onLeftElementPress={() => navigation.openDrawer()}
         />
       </SafeAreaView>
@@ -21,7 +21,7 @@ export default class HeaderComponent extends Component {
 
 const styles = StyleSheet.create({
   safeAreaView: {
-    backgroundColor: 'orange',
+    backgroundColor: '#ffa500',
     shadowColor: 'gray',
     shadowOffset: {height: 1, width: 0},
     shadowOpacity: 0.5,

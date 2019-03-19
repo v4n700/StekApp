@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFF</color>
-    <color name="stekOrange">#e77a02</color>
+    <color name="stekOrange">#ffa500</color>
     <color name="primary_dark">#FFFFFF</color>
 </resources>

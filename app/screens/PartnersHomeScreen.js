@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Alert, SafeAreaView, FlatList} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView, Alert, SafeAreaView, FlatList, StatusBar} from 'react-native';
 import { Toolbar } from 'react-native-material-ui';
 
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
@@ -73,7 +73,7 @@ export default class PartnersScreen extends Component{
           <Toolbar
             leftElement="menu"
             centerElement="СТЭК"
-            style={{ container: { backgroundColor: 'orange' } }}
+            style={{ container: { backgroundColor: '#ffa500' } }}
             searchable={{
               autoFocus: true,
               placeholder: 'Поиск',
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   safeAreaView: {
-    backgroundColor: 'orange',
+    backgroundColor: '#ffa500',
     shadowColor: 'gray',
     shadowOffset: {height: 1, width: 0},
     shadowOpacity: 0.5,
