@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView, Image, Alert} from 'react-native';
+import {Platform, StyleSheet, Text, View, SafeAreaView, Image, Alert, AsyncStorage} from 'react-native';
 import {createDrawerNavigator, createAppContainer, NavigationActions, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 import firebase from 'react-native-firebase';
@@ -14,17 +14,21 @@ import PartnersListScreen from './screens/PartnersListScreen';
 import PartnerInfoScreen from './screens/PartnerInfoScreen';
 import BarcodeScreen from './screens/BarcodeScreen';
 
+import API from './api/API';
+
 import CustomDrawerComponent from './components/CustomDrawerComponent';
 
 
 
 export default class App extends Component{
+
   componentDidMount() {
     SplashScreen.hide()
     firebase.messaging().hasPermission()
     .then(enabled => {
       if (enabled) {
         firebase.messaging().getToken().then(token => {
+          API.Token().SetToken(token);
           console.log("LOG: ", token);
         })
         // user has permissions
