@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Linking, Alert} from 'react-native';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
@@ -12,6 +12,7 @@ export default class PartnerInfoTextViewComponent extends Component {
 
     this.state = {
       visible: false,
+      link: false
     };
   }
 
@@ -19,12 +20,17 @@ export default class PartnerInfoTextViewComponent extends Component {
     if(this.props.text) {
       this.setState({visible: true});
     }
+
+    if(this.props.iconName === 'link') {
+      this.setState({link: true});
+    }
   }
 
   render() {
     return(
       <View>
-          {this.state.visible && <SpoilerText text={this.props.text} iconName={this.props.iconName}/>}
+          {this.state.visible && !(this.state.link) && <SpoilerText text={this.props.text} iconName={this.props.iconName}/>}
+          {this.state.visible && this.state.link && <LinkText text={this.props.text} iconName={this.props.iconName}/>}
       </View>
     );
   }
@@ -36,6 +42,17 @@ export class SpoilerText extends Component {
       <View style={styles.bodyTextRowView}>
         <Icon name={this.props.iconName} size={24} color="#E37926"/>
         <Text multiline={true} style={styles.bodyText}>{this.props.text}</Text>
+      </View>
+    );
+  }
+}
+
+export class LinkText extends Component {
+  render() {
+    return (
+      <View style={styles.bodyTextRowView}>
+        <Icon name={this.props.iconName} size={24} color="#E37926"/>
+        <Text onPress={()=>{Linking.openURL(this.props.text)}} multiline={true} style={styles.link}>{this.props.text}</Text>
       </View>
     );
   }
@@ -76,7 +93,6 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(14),
     marginLeft: scale(29)
   },
-
   bodyText: {
     marginLeft: scale(10),
     fontFamily: 'Roboto',
@@ -84,5 +100,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     width: '95%',
     color: 'black'
+  },
+  link: {
+    marginLeft: scale(10),
+    fontFamily: 'Roboto',
+    fontWeight: 'normal',
+    fontSize: 20,
+    width: '95%',
+    color: 'blue',
+    textDecorationLine: 'underline'
   }
 });
