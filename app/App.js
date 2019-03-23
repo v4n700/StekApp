@@ -29,6 +29,8 @@ export default class App extends Component{
       if (enabled) {
         firebase.messaging().getToken().then(token => {
           this.postToken(token)
+          // API.Token().SetToken(token);
+          // console.log("LOG: ", token);
         })
         // user has permissions
       } else {
@@ -103,7 +105,7 @@ const AppDrawerNavigator = createDrawerNavigator({
   contentComponent: CustomDrawerComponent,
   initialRouteName: 'PartnersScreen',
   contentOptions: {
-    activeTintColor: 'orange',
+    activeTintColor: '#ffa500',
     labelStyle:{fontFamily:'Phenomena'}
   }
 })
