@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView, Image, Alert, AsyncStorage} from 'react-native';
-import {createDrawerNavigator, createAppContainer, NavigationActions, createStackNavigator} from 'react-navigation';
+import { StyleSheet, Image, AsyncStorage } from 'react-native';
+import {createDrawerNavigator, createAppContainer, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 import firebase from 'react-native-firebase';
 

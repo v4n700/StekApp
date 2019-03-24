@@ -1,8 +1,7 @@
 
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform} from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
 export default class PromotionComponent extends Component {
   constructor(props) {

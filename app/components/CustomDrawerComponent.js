@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Alert, View, SafeAreaView, Image, TouchableOpacity} from 'react-native';
-import {createDrawerNavigator, createAppContainer, DrawerItems} from 'react-navigation';
+import { StyleSheet, View, SafeAreaView, Image } from 'react-native';
+import { DrawerItems} from 'react-navigation';
 
 export default class CustomDrawerComponent extends Component{
   render() {

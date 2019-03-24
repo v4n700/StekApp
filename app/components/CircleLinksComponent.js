@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Alert, Linking} from 'react-native';
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
-import { CachedImage, ImageCacheProvider } from 'react-native-cached-image';
+import { StyleSheet, View, TouchableOpacity, Image, Linking } from 'react-native';
+import { scale, verticalScale } from '../utilities/Scaling';
 
 export default class CircleLinksComponent extends Component{
 

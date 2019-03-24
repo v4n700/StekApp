@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Alert} from 'react-native';
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { scale } from '../utilities/Scaling';
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image';
 
 export default class RoundCategoryComponent extends Component{

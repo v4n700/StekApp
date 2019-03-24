@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Linking, Alert} from 'react-native';
+import { StyleSheet, Text, View, Linking } from 'react-native';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { scale, verticalScale } from '../utilities/Scaling';
 import stekIconConfig from '../fonts/Stek/config.json';
 const Icon = createIconSetFromFontello(stekIconConfig);
 

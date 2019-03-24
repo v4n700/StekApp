@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, Alert} from 'react-native';
+import {View, StyleSheet } from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import PartnerInfoComponent from '../components/PartnerInfoComponent';

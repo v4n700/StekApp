@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView, Image, Alert, StatusBar, FlatList, SafeAreaView} from 'react-native';
+import { StyleSheet, View, FlatList, SafeAreaView} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 import { Toolbar } from 'react-native-material-ui';
 

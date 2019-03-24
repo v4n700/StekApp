@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
-import {StackActions, NavigationActions} from 'react-navigation';
 
 import HeaderComponent from '../components/HeaderComponent';
 import CircleLinksComponent from '../components/CircleLinksComponent';

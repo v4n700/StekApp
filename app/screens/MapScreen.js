@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, Alert, StatusBar} from 'react-native';
+import {View, StyleSheet, Image } from 'react-native';
 import MapView from 'react-native-maps';
 
 import HeaderComponent from '../components/HeaderComponent';

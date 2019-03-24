@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Alert, RefreshControl} from 'react-native';
+import {View, StyleSheet, Image, ScrollView, RefreshControl} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import PromotionComponent from '../components/PromotionComponent';

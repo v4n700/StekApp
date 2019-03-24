@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, SafeAreaView, StatusBar} from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import { Toolbar } from 'react-native-material-ui';
 
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { scale, verticalScale } from '../utilities/Scaling';
 
 export default class SpoilerComponent extends Component {
   constructor(props) {

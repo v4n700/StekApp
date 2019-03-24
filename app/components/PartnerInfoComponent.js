@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView, Dimensions, Platform, Alert} from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 
-import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
+import { scale, verticalScale } from '../utilities/Scaling';
 import PartnerInfoTextViewComponent from './PartnerInfoTextViewComponent';
 
 export default class PartnerInfoComponent extends Component {
