@@ -6,7 +6,7 @@ import { scale, verticalScale } from '../utilities/Scaling';
 import stekIconConfig from '../fonts/Stek/config.json';
 const Icon = createIconSetFromFontello(stekIconConfig);
 
-export default class PartnerInfoTextViewComponent extends Component {
+export default class PartnerInfoLinkComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -24,20 +24,20 @@ export default class PartnerInfoTextViewComponent extends Component {
   render() {
     return(
       <View>
-          {this.state.visible && <SpoilerText text={this.props.text} iconName={this.props.iconName}/>}
+          {this.state.visible && <LinkText text={this.props.text} iconName={this.props.iconName}/>}
       </View>
     );
   }
 }
 
-export class SpoilerText extends Component {
+export class LinkText extends Component {
   render() {
     return (
       <View style={styles.bodyTextRowView}>
-          <View style={styles.iconView}>
-            <Icon name={this.props.iconName} size={24} color="#E37926"/>
-          </View>
-          <Text multiline={true} style={styles.bodyText}>{this.props.text}</Text>
+        <View style={styles.iconView}>
+          <Icon name={this.props.iconName} size={24} color="#E37926"/>
+        </View>
+        <Text onPress={()=>{Linking.openURL(this.props.text)}} multiline={true} style={styles.link}>{this.props.text}</Text>
       </View>
     );
   }
@@ -55,13 +55,13 @@ const styles = StyleSheet.create({
     marginLeft: scale(29),
     marginRight: scale(29)
   },  
-  bodyText: {
+  link: {
     marginLeft: scale(10),
-    paddingRight: scale(10),
     fontFamily: 'Roboto',
     fontWeight: 'normal',
     fontSize: 20,
     width: '95%',
-    color: 'black'
-  },
+    color: 'blue',
+    textDecorationLine: 'underline'
+  }
 });

@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 
 import { scale, verticalScale } from '../utilities/Scaling';
 import PartnerInfoTextViewComponent from './PartnerInfoTextViewComponent';
+import PartnerInfoLinkComponent from './PartnerInfoLinkComponent';
+import PartnerInfoPhoneComponent from './PartnerInfoPhoneComponent';
 
 export default class PartnerInfoComponent extends Component {
   constructor(props) {
@@ -16,11 +18,13 @@ export default class PartnerInfoComponent extends Component {
           <Text style={styles.headerText}> {this.props.categoryName} </Text>
           <Image source={{uri:this.props.imagePath}} style={styles.partnerLogo}/>
         </View>
-        <PartnerInfoTextViewComponent text={this.props.description} iconName={'description'}/>
-        <PartnerInfoTextViewComponent text={this.props.discount} iconName={'percent'}/>
-        <PartnerInfoTextViewComponent text={this.props.address} iconName={'marker'}/>
-        <PartnerInfoTextViewComponent text={this.props.phoneNumber} iconName={'phone'}/>
-        <PartnerInfoTextViewComponent text={this.props.link} iconName={'link'}/>
+        <View style={styles.textView}>
+          <PartnerInfoTextViewComponent text={this.props.description} iconName={'description'}/>
+          <PartnerInfoTextViewComponent text={this.props.discount} iconName={'percent'}/>
+          <PartnerInfoTextViewComponent text={this.props.address} iconName={'mark'}/>
+          <PartnerInfoPhoneComponent text={this.props.phoneNumber} iconName={'phone'}/>
+          <PartnerInfoLinkComponent text={this.props.link} iconName={'link'}/>
+        </View>
       </ScrollView>
     );
   }
@@ -33,6 +37,9 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center'
+  },
+  textView: {
+    
   },
   headerText: {
     marginTop: verticalScale(17),

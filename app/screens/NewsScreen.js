@@ -51,7 +51,7 @@ export default class NewsScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getPromotions}/>}>
+        <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getNews}/>}>
           {this.renderNews()}
         </ScrollView>
       </View>

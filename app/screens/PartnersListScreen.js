@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, FlatList, SafeAreaView} from 'react-native';
+import { StyleSheet, View, FlatList, SafeAreaView, Alert} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 import { Toolbar } from 'react-native-material-ui';
 
@@ -53,9 +53,9 @@ export default class PartnersListScreen extends Component {
   searchFilterFunction = text => {    
     const newData = this.arrayholder.filter(item => {      
       const itemData = `${item.name.toUpperCase()}`;
-       const textData = text.toUpperCase();
+      const textData = text.toUpperCase();
         
-       return itemData.indexOf(textData) > -1;    
+      return itemData.indexOf(textData) > -1;    
     });    
     this.setState({ partners: newData });  
   };
@@ -80,7 +80,7 @@ export default class PartnersListScreen extends Component {
           data={this.state.partners}
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderSeparator}
-          contentContainerStyle={{paddingLeft: '3%'}}
+          contentContainerStyle={{paddingLeft: '3%', paddingBottom: '4%'}}
           refreshing={this.state.refreshing}
           onRefresh={this.getPartners}
           renderItem={({item}) => 
@@ -89,7 +89,7 @@ export default class PartnersListScreen extends Component {
               discount={item.discount}
               url={item.url}
               image={item.image}
-              phone={item.telephone}
+              phone={item.telephones}
               address={item.address}
               description={item.description}
               navigation={this.props.navigation}

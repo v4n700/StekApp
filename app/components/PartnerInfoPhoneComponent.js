@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Linking } from 'react-native';
+import { StyleSheet, Text, View, Linking, Alert } from 'react-native';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 
 import { scale, verticalScale } from '../utilities/Scaling';
 import stekIconConfig from '../fonts/Stek/config.json';
 const Icon = createIconSetFromFontello(stekIconConfig);
 
-export default class PartnerInfoTextViewComponent extends Component {
+export default class PartnerInfoPhoneComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +16,7 @@ export default class PartnerInfoTextViewComponent extends Component {
   }
 
   componentDidMount() {
-    if(this.props.text) {
+    if(this.props.text.length) {
       this.setState({visible: true});
     }
   }
@@ -24,20 +24,31 @@ export default class PartnerInfoTextViewComponent extends Component {
   render() {
     return(
       <View>
-          {this.state.visible && <SpoilerText text={this.props.text} iconName={this.props.iconName}/>}
+          {this.state.visible && <PhoneText text={this.props.text} iconName={this.props.iconName}/>}
       </View>
     );
   }
 }
 
-export class SpoilerText extends Component {
+export class PhoneText extends Component {
+
+  renderPhones = () => {
+    return this.props.text.map((phone, i) => {
+      return (
+        <Text onPress={()=> Linking.openURL(`tel:+7${phone}`)} key={i} multiline={true} style={styles.phone}>{phone}</Text>
+      )
+    }); 
+  }
+
   render() {
     return (
       <View style={styles.bodyTextRowView}>
-          <View style={styles.iconView}>
-            <Icon name={this.props.iconName} size={24} color="#E37926"/>
-          </View>
-          <Text multiline={true} style={styles.bodyText}>{this.props.text}</Text>
+        <View style={styles.iconView}>
+          <Icon name={this.props.iconName} size={24} color="#E37926"/>
+        </View>
+        <View style={styles.phoneView}>
+          {this.renderPhones()}
+        </View>
       </View>
     );
   }
@@ -49,19 +60,22 @@ const styles = StyleSheet.create({
     height: 24,
     alignItems: 'center'
   },
+  phoneView: {
+    flexDirection:'column'
+  },
   bodyTextRowView: {
     flexDirection: 'row',
     marginBottom: verticalScale(14),
     marginLeft: scale(29),
     marginRight: scale(29)
   },  
-  bodyText: {
+  phone: {
     marginLeft: scale(10),
-    paddingRight: scale(10),
     fontFamily: 'Roboto',
     fontWeight: 'normal',
     fontSize: 20,
     width: '95%',
-    color: 'black'
-  },
+    color: 'blue',
+    textDecorationLine: 'underline'
+  }
 });
