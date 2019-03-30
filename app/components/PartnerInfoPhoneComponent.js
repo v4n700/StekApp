@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     fontSize: 20,
     width: '95%',
-    color: 'blue',
+    color: '#E37926',
     textDecorationLine: 'underline'
   }
 });
