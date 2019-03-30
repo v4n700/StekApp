@@ -35,7 +35,7 @@ export class PhoneText extends Component {
   renderPhones = () => {
     return this.props.text.map((phone, i) => {
       return (
-        <Text onPress={()=> Linking.openURL(`tel:+7${phone}`)} key={i} multiline={true} style={styles.phone}>{phone}</Text>
+        <Text onPress={()=> Linking.openURL(`tel:${phone}`)} key={i} multiline={true} style={styles.phone}>{phone}</Text>
       )
     }); 
   }
