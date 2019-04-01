@@ -76,8 +76,8 @@ const StackNavigator = createStackNavigator(
   {
     PartnersScreen: PartnersScreen,
     PartnersListScreen: PartnersListScreen,
-    PartnerInfoScreen: PartnerInfoScreen
-    // BarcodeScreen: BarcodeScreen
+    PartnerInfoScreen: PartnerInfoScreen,
+    BarcodeScreen: BarcodeScreen
   },
   {
     headerMode: 'none',
