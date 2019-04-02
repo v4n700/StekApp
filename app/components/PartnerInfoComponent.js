@@ -5,6 +5,7 @@ import { scale, verticalScale } from '../utilities/Scaling';
 import PartnerInfoTextViewComponent from './PartnerInfoTextViewComponent';
 import PartnerInfoLinkComponent from './PartnerInfoLinkComponent';
 import PartnerInfoPhoneComponent from './PartnerInfoPhoneComponent';
+import PartnerInfoAddressComponent from './PartnerInfoAddressComponent';
 
 export default class PartnerInfoComponent extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class PartnerInfoComponent extends Component {
         <View style={styles.textView}>
           <PartnerInfoTextViewComponent text={this.props.description} iconName={'description'}/>
           <PartnerInfoTextViewComponent text={this.props.discount} iconName={'percent'}/>
-          <PartnerInfoTextViewComponent text={this.props.address} iconName={'mark'}/>
+          <PartnerInfoAddressComponent text={this.props.address} iconName={'mark'}/>
           <PartnerInfoPhoneComponent text={this.props.phoneNumber} iconName={'phone'}/>
           <PartnerInfoLinkComponent text={this.props.link} iconName={'link'}/>
         </View>
