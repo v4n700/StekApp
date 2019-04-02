@@ -11,7 +11,6 @@ export default class MapController {
         (response) => {
           resolve(response.result)
         }, (error) => {
-          Alert.alert('Не удалось получить метки с сервера')
           reject(error)
         })
     })

@@ -32,7 +32,7 @@ export default class MapScreen extends Component{
         await AsyncStorage.setItem('@Marks', JSON.stringify(response))
         this.setState({locations: response})
       }, async (error) => {
-        let marks = await AsyncStorage.getItem('@Marks', [])
+        let marks = await AsyncStorage.getItem('@Marks')
         this.setState({locations: JSON.parse(marks)})
       }
     )
