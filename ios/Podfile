@@ -9,8 +9,6 @@ target 'stek_app' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
 
-  pod 'react-native-fcm', :path => '../node_modules/react-native-fcm'
-
   target 'stek_appTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Alert} from 'react';
 import { StyleSheet, Image, AsyncStorage } from 'react-native';
 import {createDrawerNavigator, createAppContainer, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
@@ -22,7 +22,8 @@ import CustomDrawerComponent from './components/CustomDrawerComponent';
 
 export default class App extends Component{
 
-  componentDidMount() {
+  async componentDidMount() {
+    this.createNotificationListeners();
     SplashScreen.hide()
     firebase.messaging().hasPermission()
     .then(enabled => {
@@ -58,6 +59,39 @@ export default class App extends Component{
 
       }
     )
+  }
+
+  async createNotificationListeners() {
+    /*
+    * Triggered when a particular notification has been received in foreground
+    * */
+    this.notificationListener = firebase.notifications().onNotification((notification) => {
+        const { title, body } = notification;
+        firebase.notifications().displayNotification(notification)
+    });
+
+    /*
+    * If your app is in background, you can listen for when a notification is clicked / tapped / opened as follows:
+    * */
+    this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
+        const { title, body } = notificationOpen.notification;
+    });
+
+    /*
+    * If your app is closed, you can check if it was opened by a notification being clicked / tapped / opened as follows:
+    * */
+    const notificationOpen = await firebase.notifications().getInitialNotification();
+    if (notificationOpen) {
+      Alert.alert('test');
+        const { title, body } = notificationOpen.notification;
+    }
+    /*
+    * Triggered for data only payload in foreground
+    * */
+    this.messageListener = firebase.messaging().onMessage((message) => {
+      //process data message
+      //FireBase.notifications().displayNotification(message);
+    });
   }
 
   render() {

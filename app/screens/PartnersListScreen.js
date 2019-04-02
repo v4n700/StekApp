@@ -90,7 +90,7 @@ export default class PartnersListScreen extends Component {
               url={item.url}
               image={item.image}
               phone={item.telephones}
-              address={item.address}
+              address={item.locations}
               description={item.description}
               navigation={this.props.navigation}
             />
