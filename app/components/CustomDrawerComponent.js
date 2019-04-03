@@ -10,12 +10,12 @@ export default class CustomDrawerComponent extends Component{
     return (
       
       <SafeAreaView style={styles.container}>
-        {/* <View style={styles.header}>
+        <View style={styles.header}>
           <Image style={styles.logo} source={require('../assets/drawerStekLogo.png')}/>
-        </View> */}
-        <TouchableOpacity style={styles.header} onPress={()=> this.props.navigation.navigate('BarcodeScreen')}>
+        </View>
+        {/* <TouchableOpacity style={styles.header} onPress={()=> this.props.navigation.navigate('BarcodeScreen')}>
           <Image style={styles.logo} source={require('../assets/drawerStekLogo.png')}/>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <DrawerItems {...props}
         onItemPress={({ route, focused }) => {
           this.props.navigation.navigate(route.routeName)

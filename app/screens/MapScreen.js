@@ -64,20 +64,6 @@ export default class MapScreen extends Component{
         <MapView.Marker key={i} coordinate={location.coordinate} title={location.name}/>
       )
     });
-    /*
-    this.state.locations.map((location) => {
-      if (!this.isEmpty(location.locations) ) {
-        return location.locations.map((locations, i) => {
-          return (
-            <MapView.Marker key={i} coordinate={{
-              latitude: 61.7877502,
-              longitude: 34.3794617
-            }} title={'хуй'}/>
-          )
-        });
-    }
-    }); 
-    */
   }
 
   render(){

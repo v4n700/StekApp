@@ -3,7 +3,7 @@ import { StyleSheet, Image, AsyncStorage } from 'react-native';
 import {createDrawerNavigator, createAppContainer, createStackNavigator} from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen';
 import firebase from 'react-native-firebase';
-
+import NavigationService from './Navigations.js';
 import PartnersScreen from './screens/PartnersHomeScreen';
 import PromotionsScreen from './screens/PromotionsScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
@@ -17,6 +17,7 @@ import BarcodeScreen from './screens/BarcodeScreen';
 import API from './api/API';
 
 import CustomDrawerComponent from './components/CustomDrawerComponent';
+import Navigations from './Navigations';
 
 
 
@@ -63,40 +64,41 @@ export default class App extends Component{
 
   async createNotificationListeners() {
     /*
-    * Triggered when a particular notification has been received in foreground
-    * */
-    this.notificationListener = firebase.notifications().onNotification((notification) => {
-        const { title, body } = notification;
-        firebase.notifications().displayNotification(notification)
-    });
-
-    /*
-    * If your app is in background, you can listen for when a notification is clicked / tapped / opened as follows:
-    * */
-    this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
-        const { title, body } = notificationOpen.notification;
-    });
-
-    /*
     * If your app is closed, you can check if it was opened by a notification being clicked / tapped / opened as follows:
     * */
     const notificationOpen = await firebase.notifications().getInitialNotification();
+    console.log('NOFI', notificationOpen);
     if (notificationOpen) {
-      Alert.alert('test');
-        const { title, body } = notificationOpen.notification;
+      NavigationService.navigate('PromoScreen')
     }
     /*
     * Triggered for data only payload in foreground
     * */
-    this.messageListener = firebase.messaging().onMessage((message) => {
-      //process data message
-      //FireBase.notifications().displayNotification(message);
-    });
+    // this.messageListener = firebase.messaging().onMessage((message) => {
+    //   //process data message
+    //   console.log('notificationOpenedListener', notificationOpen);
+
+    //   console.log(JSON.stringify(message));
+    // });
+  }
+  
+  showAlert(title, body) {
+    Alert.alert(
+      title, body,
+      [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ],
+      { cancelable: false },
+    );
   }
 
   render() {
     return (
-      <Drawer/>
+      <Drawer
+        ref={navigatorRef => {
+          NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+      />
     );
   }
 }
@@ -107,8 +109,8 @@ const StackNavigator = createStackNavigator(
   {
     PartnersScreen: PartnersScreen,
     PartnersListScreen: PartnersListScreen,
-    PartnerInfoScreen: PartnerInfoScreen,
-    BarcodeScreen: BarcodeScreen
+    PartnerInfoScreen: PartnerInfoScreen
+    // BarcodeScreen: BarcodeScreen
   },
   {
     headerMode: 'none',
