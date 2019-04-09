@@ -24,7 +24,7 @@ export default class PartnerInfoAddressComponent extends Component {
   render() {
     return(
       <View>
-          {this.state.visible && <AddressText text={this.props.text} iconName={this.props.iconName}/>}
+          {this.state.visible && <AddressText  navigation={this.props.navigation} text={this.props.text} iconName={this.props.iconName}/>}
       </View>
     );
   }
@@ -34,7 +34,7 @@ export class AddressText extends Component {
   renderAddresses = () => {
     return this.props.text.map((address, i) => {
       return (
-        <Text key={i} multiline={true} style={styles.address}>{address.address + ';'}</Text>
+        <Text onPress={()=> this.props.navigation.navigate('MapScreen')} key={i} multiline={true} style={styles.address}>{address.address + ';'}</Text>
       )
     }); 
   }

@@ -30,7 +30,7 @@ export default class PromotionComponent extends Component {
       <View style = {styles.container}>
           <Text style={styles.headerText}>{this.props.title}</Text>
           <Image style={{width: imgWidth, height: imgHeight, alignSelf:'center'}} source={{uri : this.props.image}} />
-          <Text style={styles.promotionText}>{this.props.description}</Text>
+          <Text selectable={true} style={styles.promotionText}>{this.props.description}</Text>
           <View style={styles.underline}/>
       </View>
     );

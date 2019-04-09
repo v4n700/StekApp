@@ -22,7 +22,7 @@ export default class PartnerInfoComponent extends Component {
         <View style={styles.textView}>
           <PartnerInfoTextViewComponent text={this.props.description} iconName={'description'}/>
           <PartnerInfoTextViewComponent text={this.props.discount} iconName={'percent'}/>
-          <PartnerInfoAddressComponent text={this.props.address} iconName={'mark'}/>
+          <PartnerInfoAddressComponent navigation={this.props.navigation} text={this.props.address} iconName={'mark'}/>
           <PartnerInfoPhoneComponent text={this.props.phoneNumber} iconName={'phone'}/>
           <PartnerInfoLinkComponent text={this.props.link} iconName={'link'}/>
         </View>

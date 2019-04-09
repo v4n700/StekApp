@@ -18,6 +18,7 @@ export default class PartnerInfoScreen extends Component{
           phoneNumber={this.props.navigation.getParam('phone')}
           link={this.props.navigation.getParam('url')}
           discount={this.props.navigation.getParam('discount')}
+          navigation={this.props.navigation}
         />
       </View>
     )

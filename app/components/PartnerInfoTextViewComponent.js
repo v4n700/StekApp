@@ -37,7 +37,7 @@ export class SpoilerText extends Component {
           <View style={styles.iconView}>
             <Icon name={this.props.iconName} size={24} color="#E37926"/>
           </View>
-          <Text multiline={true} style={styles.bodyText}>{this.props.text}</Text>
+          <Text selectable={true} multiline={true} style={styles.bodyText}>{this.props.text}</Text>
       </View>
     );
   }
