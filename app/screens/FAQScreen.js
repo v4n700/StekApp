@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, SafeAreaView} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import FAQComponent from '../components/FAQComponent';
@@ -16,6 +16,7 @@ export default class FAQScreen extends Component{
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
         <FAQComponent navigation={this.props.navigation}/>
+        <SafeAreaView style={styles.bottomArea}/>
       </View>
     )
   }
@@ -29,5 +30,11 @@ const styles = StyleSheet.create({
   icon: {
     height: 34,
     width: 34
+  },
+  bottomArea: {
+    backgroundColor: 'white',
+    shadowColor: 'white',
+    shadowOffset: {height: -5, width: 0},
+    shadowOpacity: 5,
   }
 });

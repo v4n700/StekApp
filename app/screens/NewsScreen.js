@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, ScrollView, RefreshControl} from 'react-native';
+import {View, StyleSheet, Image, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import NewsComponent from '../components/PromotionComponent';
@@ -54,6 +54,7 @@ export default class NewsScreen extends Component{
         <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getNews}/>}>
           {this.renderNews()}
         </ScrollView>
+        <SafeAreaView style={styles.bottomArea}/>
       </View>
     )
   }
@@ -67,5 +68,11 @@ const styles = StyleSheet.create({
   icon: {
     height: 34,
     width: 34
+  },
+  bottomArea: {
+    backgroundColor: 'white',
+    shadowColor: 'white',
+    shadowOffset: {height: -5, width: 0},
+    shadowOpacity: 5,
   }
 });

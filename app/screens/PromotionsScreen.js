@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, ScrollView, RefreshControl} from 'react-native';
+import {View, StyleSheet, Image, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import PromotionComponent from '../components/PromotionComponent';
@@ -56,6 +56,7 @@ export default class PromotionsScreen extends Component{
         <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getPromotions}/>}>
           { this.renderPromotions() }
         </ScrollView>
+        <SafeAreaView style={styles.bottomArea}/>
       </View>
     )
   }
@@ -69,5 +70,11 @@ const styles = StyleSheet.create({
   icon: {
     height: 34,
     width: 34
+  },
+  bottomArea: {
+    backgroundColor: 'white',
+    shadowColor: 'white',
+    shadowOffset: {height: -5, width: 0},
+    shadowOpacity: 5,
   }
 });

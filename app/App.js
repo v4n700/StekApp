@@ -14,6 +14,8 @@ import PartnersListScreen from './screens/PartnersListScreen';
 import PartnerInfoScreen from './screens/PartnerInfoScreen';
 import BarcodeScreen from './screens/BarcodeScreen';
 
+import { scale, verticalScale } from './utilities/Scaling';
+
 import API from './api/API';
 
 import CustomDrawerComponent from './components/CustomDrawerComponent';
@@ -139,7 +141,7 @@ const AppDrawerNavigator = createDrawerNavigator({
   initialRouteName: 'PartnersScreen',
   contentOptions: {
     activeTintColor: '#ffa500',
-    labelStyle:{fontFamily:'Phenomena'}
+    labelStyle:{fontFamily:'Phenomena', fontSize: scale(14)}
   }
 })
 
@@ -165,5 +167,5 @@ const styles = StyleSheet.create({
   icon: {
     height: 34,
     width: 34
-  }
+  },
 });

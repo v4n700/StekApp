@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		004D18BDA9F94422B81EF5F1 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E89A8ABDF994407F9D5A0031 /* Foundation.ttf */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
@@ -46,8 +47,7 @@
 		5853D88DBA034F13A1773D5D /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5701C44AEE77483DB9BB0EE0 /* Entypo.ttf */; };
 		6FFE20AAE73E4C69949D1FDF /* Phenomena-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12458509AE5F4EDBB9FD8B24 /* Phenomena-Bold.ttf */; };
 		78051BF7220C9E9D00D43F9E /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78051BCB220C9E7600D43F9E /* libART.a */; };
-		78348234224033F300E1C73D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78348233224033F200E1C73D /* GoogleService-Info.plist */; };
-		78348235224033F300E1C73D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78348233224033F200E1C73D /* GoogleService-Info.plist */; };
+		78B570F3225E5B8400AAC219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78B570F2225E5B8400AAC219 /* GoogleService-Info.plist */; };
 		78F13AF42236C76300503299 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87DE3507A7EA4077A9813927 /* Roboto_medium.ttf */; };
 		78F13AF52236C76300503299 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A316C088BFEA4481AFF7982C /* Roboto.ttf */; };
 		8106C95C111444018CFDFBC3 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC1BB456E9D7446C93AC35CB /* FontAwesome5_Brands.ttf */; };
@@ -503,8 +503,9 @@
 		74A6FD2A4F5E44CFA79B4C36 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		74B0BFDBAB3619A510FEE853 /* Pods-stek_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stek_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-stek_app/Pods-stek_app.release.xcconfig"; sourceTree = "<group>"; };
 		78051BC4220C9E7600D43F9E /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
-		78348233224033F200E1C73D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78B570F2225E5B8400AAC219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		78D27121225D0671002B9C5B /* stek_app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = stek_app.entitlements; path = stek_app/stek_app.entitlements; sourceTree = "<group>"; };
 		7BEEE83D6BD7400B9C7846A0 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		7DC89D3FB01C49CBBB476097 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
 		7E78115F3AC04169A5E0C276 /* libRNFetchBlob.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFetchBlob.a; sourceTree = "<group>"; };
@@ -695,12 +696,13 @@
 		13B07FAE1A68108700A75B9A /* stek_app */ = {
 			isa = PBXGroup;
 			children = (
+				78D27121225D0671002B9C5B /* stek_app.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				78348233224033F200E1C73D /* GoogleService-Info.plist */,
+				78B570F2225E5B8400AAC219 /* GoogleService-Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -1082,9 +1084,12 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = PF6HZM73HE;
+						DevelopmentTeam = 2H2G492Q46;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1559,7 +1564,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78348235224033F300E1C73D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1578,7 +1582,7 @@
 				C8370DF1739C47619E4E86AF /* Phenomena-Regular.ttf in Resources */,
 				A615BD45C3B54C6CB4EDAE1A /* Phenomena-Thin.ttf in Resources */,
 				CFE66DA86C0E44A18F6F5302 /* AntDesign.ttf in Resources */,
-				78348234224033F300E1C73D /* GoogleService-Info.plist in Resources */,
+				78B570F3225E5B8400AAC219 /* GoogleService-Info.plist in Resources */,
 				5853D88DBA034F13A1773D5D /* Entypo.ttf in Resources */,
 				184C93F8D4604AF49C0DB2E5 /* EvilIcons.ttf in Resources */,
 				25297C94CC7D449A9642CFA5 /* Feather.ttf in Resources */,
@@ -1871,9 +1875,10 @@
 			baseConfigurationReference = 16716F1BFA8063BE34AEB2FA /* Pods-stek_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stek_app/stek_app.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = PF6HZM73HE;
+				DEVELOPMENT_TEAM = 2H2G492Q46;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1891,7 +1896,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.stek-app";
 				PRODUCT_NAME = stek_app;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1902,8 +1907,9 @@
 			baseConfigurationReference = 74B0BFDBAB3619A510FEE853 /* Pods-stek_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stek_app/stek_app.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PF6HZM73HE;
+				DEVELOPMENT_TEAM = 2H2G492Q46;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1921,7 +1927,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.stek-app";
 				PRODUCT_NAME = stek_app;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

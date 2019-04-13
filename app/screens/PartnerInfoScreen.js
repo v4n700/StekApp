@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet } from 'react-native';
+import {View, StyleSheet, SafeAreaView } from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import PartnerInfoComponent from '../components/PartnerInfoComponent';
@@ -20,6 +20,7 @@ export default class PartnerInfoScreen extends Component{
           discount={this.props.navigation.getParam('discount')}
           navigation={this.props.navigation}
         />
+        <SafeAreaView style={styles.bottomArea}/>
       </View>
     )
   }
@@ -30,4 +31,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white'
   },
+  bottomArea: {
+    backgroundColor: 'white',
+    shadowColor: 'white',
+    shadowOffset: {height: -5, width: 0},
+    shadowOpacity: 5,
+  }
 });

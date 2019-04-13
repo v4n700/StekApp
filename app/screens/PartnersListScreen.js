@@ -60,6 +60,10 @@ export default class PartnersListScreen extends Component {
     this.setState({ partners: newData });  
   };
 
+  resetSearchFilter = () => {
+    this.setState({ partners: this.arrayholder }); 
+  };
+
   render() {
     return (
     <View style={styles.container}>
@@ -71,7 +75,8 @@ export default class PartnersListScreen extends Component {
           searchable={{
             autoFocus: true,
             placeholder: 'Поиск',
-            onChangeText: text => this.searchFilterFunction(text)
+            onChangeText: text => this.searchFilterFunction(text),
+            onSearchCloseRequested: () => this.resetSearchFilter()
           }}
           onLeftElementPress={() => this.props.navigation.openDrawer()}
         />
@@ -96,6 +101,7 @@ export default class PartnersListScreen extends Component {
             />
           }
       />
+      <SafeAreaView style={styles.bottomArea}/>
     </View>
     );
   }
@@ -119,5 +125,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontSize: 22,
     textAlign:'center'
+  },
+  bottomArea: {
+    backgroundColor: 'white',
+    shadowColor: 'white',
+    shadowOffset: {height: -5, width: 0},
+    shadowOpacity: 5,
   }
 });

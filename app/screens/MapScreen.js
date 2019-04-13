@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Alert, AsyncStorage } from 'react-native';
+import {View, StyleSheet, Image, Alert, AsyncStorage, SafeAreaView } from 'react-native';
 import MapView from 'react-native-maps';
 
 import HeaderComponent from '../components/HeaderComponent';
@@ -82,6 +82,7 @@ export default class MapScreen extends Component{
         >
           {this.renderLocations()}
         </MapView>
+        <SafeAreaView style={styles.bottomArea}/>
       </View>
     )
   }
@@ -95,5 +96,11 @@ const styles = StyleSheet.create({
   icon: {
     height: 34,
     width: 34
+  },
+  bottomArea: {
+    backgroundColor: '#f9f5ed',
+    shadowColor: '#f9f5ed',
+    shadowOffset: {height: -5, width: 0},
+    shadowOpacity: 5,
   }
 });
