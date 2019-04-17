@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
+import {View, StyleSheet, Image, ScrollView, RefreshControl, SafeAreaView, Platform} from 'react-native';
 
 import HeaderComponent from '../components/HeaderComponent';
 import PromotionComponent from '../components/PromotionComponent';
@@ -53,7 +53,7 @@ export default class PromotionsScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <ScrollView refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.getPromotions}/>}>
+        <ScrollView refreshControl={<RefreshControl refreshing={Platform.select({android: this.state.refreshing, ios: false})} onRefresh={this.getPromotions}/>}>
           { this.renderPromotions() }
         </ScrollView>
         <SafeAreaView style={styles.bottomArea}/>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, FlatList, SafeAreaView, Alert} from 'react-native';
+import { StyleSheet, View, FlatList, SafeAreaView, Text, Platform, Alert} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 import { Toolbar } from 'react-native-material-ui';
 
@@ -14,6 +14,7 @@ export default class PartnersListScreen extends Component {
     this.state = {
       data: [],
       refreshing: false,
+      searching: false,
       partners: []
     }
 
@@ -22,9 +23,11 @@ export default class PartnersListScreen extends Component {
 
   async componentDidMount() {
     this.getPartners();
+    
   }
 
   getPartners = async () => {
+
     this.setState({ refreshing: true })
 
     await API.Partners().GetPartners(this.props.navigation.getParam('categoryID')).then(
@@ -50,7 +53,7 @@ export default class PartnersListScreen extends Component {
     );
   };
 
-  searchFilterFunction = text => {    
+  searchFilterFunction = text => {
     const newData = this.arrayholder.filter(item => {      
       const itemData = `${item.name.toUpperCase()}`;
       const textData = text.toUpperCase();
@@ -61,7 +64,7 @@ export default class PartnersListScreen extends Component {
   };
 
   resetSearchFilter = () => {
-    this.setState({ partners: this.arrayholder }); 
+    this.setState({ partners: this.arrayholder, searching: false }); 
   };
 
   render() {
@@ -74,9 +77,11 @@ export default class PartnersListScreen extends Component {
           style={{ container: { backgroundColor: '#ffa500' } }}
           searchable={{
             autoFocus: true,
+            autoCorrect: false,
             placeholder: 'Поиск',
             onChangeText: text => this.searchFilterFunction(text),
-            onSearchCloseRequested: () => this.resetSearchFilter()
+            onSearchCloseRequested: () => this.resetSearchFilter(),
+            onSearchPressed: () => this.setState({searching: true})    
           }}
           onLeftElementPress={() => this.props.navigation.openDrawer()}
         />
@@ -86,8 +91,8 @@ export default class PartnersListScreen extends Component {
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderSeparator}
           contentContainerStyle={{paddingLeft: '3%', paddingBottom: '4%'}}
-          refreshing={this.state.refreshing}
-          onRefresh={this.getPartners}
+          refreshing={Platform.select({android: this.state.refreshing, ios: false})}
+          onRefresh={this.state.searching ? null : this.getPartners}
           renderItem={({item}) => 
             <PartnerCardComponent 
               partnerName={item.name} 
@@ -122,6 +127,7 @@ const styles = StyleSheet.create({
     marginLeft: scale(9)
   },
   emptyText: {
+    height: 40,
     fontFamily: 'Roboto',
     fontSize: 22,
     textAlign:'center'

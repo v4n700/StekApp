@@ -9,7 +9,6 @@ export default class FAQComponent extends Component{
     super(props);
 
     this.state = {
-      refreshing: false,
       questions: []
     }
   }
@@ -32,13 +31,11 @@ export default class FAQComponent extends Component{
   };
 
   getFAQs = async () => {
-    this.setState({ refreshing: true })
 
     await API.FAQs().GetFAQs().then(
       async(response) => {
-        this.setState({ questions: response, refreshing: false })
+        this.setState({ questions: response})
       }, (error) => {
-        this.setState({ refreshing: false })
       }
     )
   }
@@ -53,8 +50,6 @@ export default class FAQComponent extends Component{
           backgroundColor: 'white',
         }}
         data={this.state.questions}
-        onRefresh={this.getFAQs}
-        refreshing={this.state.refreshing}
         keyExtractor={this.keyExtractor}
         renderItem={({item}) =>
           <View>
