@@ -23,7 +23,6 @@ export default class PartnersListScreen extends Component {
 
   async componentDidMount() {
     this.getPartners();
-    
   }
 
   getPartners = async () => {
@@ -67,6 +66,10 @@ export default class PartnersListScreen extends Component {
     this.setState({ partners: this.arrayholder, searching: false }); 
   };
 
+  onSearchCloseRequested = () => {
+
+  };
+
   render() {
     return (
     <View style={styles.container}>
@@ -89,6 +92,7 @@ export default class PartnersListScreen extends Component {
       <FlatList 
           data={this.state.partners}
           keyExtractor={this.keyExtractor}
+          bounces={!this.state.searching}
           ItemSeparatorComponent={this.renderSeparator}
           contentContainerStyle={{paddingLeft: '3%', paddingBottom: '4%'}}
           refreshing={Platform.select({android: this.state.refreshing, ios: false})}

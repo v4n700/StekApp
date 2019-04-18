@@ -100,6 +100,7 @@ export default class PartnersScreen extends Component{
         <FlatList
           data={this.state.categories}
           keyExtractor={this.keyExtractor}
+          bounces={!this.state.searching}
           ItemSeparatorComponent={this.renderSeparator}
           contentContainerStyle={{paddingBottom: '4%'}}
           refreshing={Platform.select({android: this.state.refreshing, ios: false})}
