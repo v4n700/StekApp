@@ -43,14 +43,14 @@ const styles = StyleSheet.create({
     
   },
   headerText: {
-    marginTop: verticalScale(17),
+    margin: verticalScale(17),
+    textAlign: 'center',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
     color: 'black',
     fontSize: 24
   },
   partnerLogo: {
-    marginTop: verticalScale(17),
     marginBottom: verticalScale(50),
     height: scale(133),
     width: scale(133)

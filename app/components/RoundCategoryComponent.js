@@ -9,7 +9,6 @@ export default class RoundCategoryComponent extends Component{
     super(props);
   }
 
-
   render() {
     const { navigation } = this.props
     return(
@@ -28,7 +27,10 @@ export default class RoundCategoryComponent extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: '1%'
+    paddingBottom: '1%',
+    marginLeft: '3%',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   shadow: {
     shadowColor: 'gray',

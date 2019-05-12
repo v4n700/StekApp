@@ -30,12 +30,6 @@ export default class PartnersScreen extends Component{
     this.getCategories();
   }
 
-  test = () => {
-    this.setState({ refreshing: true })
-    Alert.alert('?')
-    this.setState({ refreshing: false })
-  }
-
   getCategories = async () => {
     this.setState({ refreshing: true })
 
@@ -44,7 +38,6 @@ export default class PartnersScreen extends Component{
         this.setState({ categories: response, refreshing: false })
         this.arrayholder = response;
       }, (error) => {
-        Alert.alert('err')
         this.setState({ refreshing: false })
       }
     )

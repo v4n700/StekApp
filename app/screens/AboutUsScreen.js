@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 import { scale, moderateScale, verticalScale } from '../utilities/Scaling';
 
 import HeaderComponent from '../components/HeaderComponent';
@@ -17,6 +17,7 @@ export default class AboutUsScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
+        <ScrollView bounces={false}>
         <View style={styles.textView}>
           <Text style={styles.headerText}>Что такое «СТЭК»?</Text>
           <Text style={styles.bodyText}>«СТЭК» - студенческая электронная карта,к оторая так же заменяет студенческий, читательский и профсоюзный билет.</Text>
@@ -29,6 +30,7 @@ export default class AboutUsScreen extends Component{
           <CircleLinksComponent imagePath={require('../assets/menu/svyaz/vk/drawable-hdpi/Group.png')} link='https://vk.com/card_stec'/>
           <CircleLinksComponent imagePath={require('../assets/menu/svyaz/instagram/drawable-hdpi/Group.png')} link='https://www.instagram.com/diskontstec'/>
         </View>
+        </ScrollView>
       </View>
     )
   }

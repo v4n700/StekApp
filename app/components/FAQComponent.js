@@ -45,6 +45,7 @@ export default class FAQComponent extends Component{
   render(){
     return(
       <FlatList
+        bounces={false}
         style={{
           flex: 1,
           backgroundColor: 'white',

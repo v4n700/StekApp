@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     width: scale(344),
-    height: verticalScale(110),
     marginTop: verticalScale(10)
   },
   touch: {

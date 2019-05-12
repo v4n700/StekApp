@@ -37,10 +37,8 @@ export default class App extends Component{
       } else {
         firebase.messaging().requestPermission()
           .then(() => {
-            alert("User Now Has Permission")
           })
           .catch(error => {
-            alert("Error", error)
             // User has rejected permissions  
           });
       }
@@ -82,16 +80,6 @@ export default class App extends Component{
 
     //   console.log(JSON.stringify(message));
     // });
-  }
-  
-  showAlert(title, body) {
-    Alert.alert(
-      title, body,
-      [
-          { text: 'OK', onPress: () => console.log('OK Pressed') },
-      ],
-      { cancelable: false },
-    );
   }
 
   render() {

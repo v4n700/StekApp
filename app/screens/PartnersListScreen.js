@@ -66,10 +66,6 @@ export default class PartnersListScreen extends Component {
     this.setState({ partners: this.arrayholder, searching: false }); 
   };
 
-  onSearchCloseRequested = () => {
-
-  };
-
   render() {
     return (
     <View style={styles.container}>
