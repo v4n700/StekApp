@@ -17,7 +17,7 @@ export default class AboutUsScreen extends Component{
     return (
       <View style={styles.container}>
         <HeaderComponent navigation = {this.props.navigation}/>
-        <ScrollView bounces={false}>
+        <ScrollView bounces={false} contentContainerStyle={styles.scroll}>
         <View style={styles.textView}>
           <Text style={styles.headerText}>Что такое «СТЭК»?</Text>
           <Text style={styles.bodyText}>«СТЭК» - студенческая электронная карта,к оторая так же заменяет студенческий, читательский и профсоюзный билет.</Text>
@@ -26,11 +26,11 @@ export default class AboutUsScreen extends Component{
           <Text style={styles.bodyText}>С каждым годом держателей карт становится все больше!</Text>
           <Text style={styles.bodyText}>С нами сотрудничают уже более 150 организаций города Петрозаводска, которые предоставляют скидки от 3 до 50 % держателям карт «СТЭК». </Text>
         </View>
-        <View style={styles.links}>
-          <CircleLinksComponent imagePath={require('../assets/menu/svyaz/vk/drawable-hdpi/Group.png')} link='https://vk.com/card_stec'/>
-          <CircleLinksComponent imagePath={require('../assets/menu/svyaz/instagram/drawable-hdpi/Group.png')} link='https://www.instagram.com/diskontstec'/>
-        </View>
-        </ScrollView>
+          <View style={styles.links}>
+            <CircleLinksComponent imagePath={require('../assets/menu/svyaz/vk/drawable-hdpi/Group.png')} link='https://vk.com/card_stec'/>
+            <CircleLinksComponent imagePath={require('../assets/menu/svyaz/instagram/drawable-hdpi/Group.png')} link='https://www.instagram.com/diskontstec'/>
+          </View>
+      </ScrollView>
       </View>
     )
   }
@@ -44,6 +44,10 @@ const styles = StyleSheet.create({
   icon: {
     height: 34,
     width: 34
+  },
+  scroll: {
+    flexGrow: 1,
+    paddingBottom: '30%'
   },
   textView: {
     alignItems: 'center'
