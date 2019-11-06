@@ -2,7 +2,7 @@ import { Alert, AsyncStorage } from 'react-native';
 
 export default class ApiController {
   constructor() {
-    this.apiDomain = "northern-rocket.com/"
+    this.apiDomain = "stec.cs.petrsu.ru/"
     this.apiUrl = "http://" + this.apiDomain
     this.wsUrl = "ws://" + this.apiDomain
   }
@@ -38,18 +38,18 @@ export default class ApiController {
         }).catch((e) => {
           reject({ status: -1, message: e.message })
         })
-    })
+      })
   }
 
   callAutoRefresh = async (route, method, content, headers, body) => {
     return new Promise(
       (resolve, reject) => {
-          this.call(route, method, content, headers, body).then(
-            (response) => {
-              resolve(response)
-            }, (error) => {
-                reject(error)
-            })
+        this.call(route, method, content, headers, body).then(
+          (response) => {
+            resolve(response)
+          }, (error) => {
+            reject(error)
+          })
       })
   }
 
